@@ -87,15 +87,16 @@ select {
     margin: 10px;
 }
 
-.title{
+.title {
     font-family: Anton;
     font-style: Regular;
     font-size: 50px;
-    color:#003049;
-    text-shadow:#fcc049 3px solid;
+    color: #003049;
+    text-shadow: #fcc049 3px solid;
 }
+
 header {
-    width: 75%;
+    /*width: 75%;
     margin-right: auto;
     margin-left: auto;
     display: flex;
@@ -103,10 +104,11 @@ header {
     justify-content: space-around;
     align-items: center;
     margin-top: 0px;
-    margin-bottom: 0px;
+    margin-bottom: 0px;*/
 }
+
 @media screen and (max-width:600px) {
-    header  {
+    /*header  {
       flex-direction: column;
       text-align: center;
     }
@@ -116,5 +118,5 @@ header {
 
     #headerImage {
         margin-top: 0px;
-    }
+    }*/
 }
