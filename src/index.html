@@ -5,19 +5,19 @@
     <meta charset="utf-8">
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans:wght@300&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <img id="headerImage"src="images/cabecera-desktop.png" alt="">
-<header style="z-index: 1" >
-      <button> <img src="images/boton-menú.png" width="100px" height="100px"alt=""></button>
-      <h1 class="title">Pokedex 2.0</h1>
-</header>
-<main id="general">
-      <nav>
-          <input type="search" name="busqueda" class="search" placeholder="Búsqueda">
-          <div class="select">
+    <div id="general">
+        <header style="z-index: 1">
+            <img id="headerImage" src="images/cabecera-desktop.png" alt="">
+            <a href="#"><img src="images/boton-menu.png" width="100px" height="100px" alt=""></a>
+            <h1 class="title">Pokedex 2.0</h1>
+        </header>
+        <nav>
+            <input type="search" name="busqueda" class="search" placeholder="Búsqueda">
+            <div class="select">
                 <select name="Ordenar" class="order-title">
                 <option value="value1" selected disabled>Ordenar</option> 
                 <option value="value2">Más fuerte</option> 
@@ -26,12 +26,12 @@
                 <option value="value5">1-256</option>
                 <option value="value6">256-1</option>
                 </select>
-           </div>
-           <div class="random">
+            </div>
+            <div class="random">
                 <img src="images/boton-aleatorio.png">
-           </div>
-       </nav>
-  </main>
+            </div>
+        </nav>
+    </div>
     <script src="main.js" type="module"></script>
 </body>
 
