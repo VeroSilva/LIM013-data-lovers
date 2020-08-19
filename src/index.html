@@ -6,24 +6,27 @@
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  <div id="root">
-    <header>
-        <h1>Esta es la cabecera</h1>
-    </header>
-      <img src="https://cdn.cienradios.com/wp-content/uploads/sites/4/2020/05/patos-1.jpg" alt="patos">
-      <footer>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fermentum leo ac est euismod bibendum. Donec id mollis enim. Vivamus lacus leo, lacinia convallis hendrerit ut, interdum et erat. Proin ut dolor erat. Mauris ornare diam enim, convallis varius sapien mollis eu. Mauris odio odio, ultricies a tristique quis, imperdiet a risus. Sed quis commodo ipsum. Nullam id tempor dolor, eget placerat nisi. Nullam neque nunc, placerat at eros a, tincidunt dignissim odio.
-          
-          Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus felis felis, dapibus sed risus nec, condimentum dapibus eros. Proin suscipit lacinia nibh ut faucibus. Sed blandit laoreet molestie. Proin aliquet sem ac felis venenatis, finibus placerat justo lacinia. Fusce ac ultrices mi, nec molestie enim. Integer nec tortor id arcu egestas lacinia. Suspendisse accumsan auctor nibh at molestie. Vestibulum gravida orci ut arcu sollicitudin convallis.
-          
-          Morbi vitae interdum felis. Aliquam erat volutpat. Suspendisse suscipit augue vitae sapien volutpat mattis. Fusce semper mattis ex vel luctus. Praesent rhoncus lectus in est sollicitudin gravida non id ante. In ut aliquet felis. Pellentesque sit amet nunc eget metus fermentum ultrices.
-          
-          Quisque laoreet gravida luctus. Quisque bibendum dui cursus, posuere eros ut, pulvinar elit. Donec sit amet leo semper lorem fermentum efficitur sit amet porta ipsum. Donec non consectetur arcu. Cras vitae tellus eget libero viverra varius. Nullam ullamcorper, est ac egestas dictum, felis risus maximus nunc, sit amet cursus neque leo non tellus. Nullam mattis sed mi vestibulum eleifend. Etiam dapibus commodo vehicula. Donec tortor nisi, convallis vitae est at, rutrum maximus sem.
-          
-          Fusce sodales, ex et ultrices efficitur, eros tellus egestas magna, non sodales quam elit sed libero. Duis venenatis venenatis odio non efficitur. Nullam ut porttitor sapien, vitae dictum felis. Sed pulvinar nibh ut urna aliquam, nec blandit nulla fringilla. Sed ut condimentum nulla. Nunc et elit dignissim, sagittis tellus faucibus, consectetur quam. Proin quis dolor vel nunc molestie fringilla eget at nibh. Curabitur ultricies, ex quis pulvinar posuere, ligula lorem posuere felis, et egestas enim ex nec mi. Suspendisse quam arcu, fringilla ultricies
-           arcu nec, blandit iaculis erat. Cras malesuada sapien eget velit interdum, et egestas odio ornare. </p>
-      </footer>
+    <div id="general">
+        <nav>
+            <input type="search" name="busqueda" class="search" placeholder="Búsqueda">
+
+            <div class="select">
+                <select name="Ordenar" class="order-title">
+                <option value="value1" selected disabled>Ordenar</option> 
+                <option value="value2">Más fuerte</option> 
+                <option value="value3">A-Z</option>
+                <option value="value4">Z-A</option>
+                <option value="value5">1-256</option>
+                <option value="value6">256-1</option>
+              </select>
+            </div>
+
+            <div class="random">
+                <img src="images/boton-aleatorio.png">
+            </div>
+        </nav>
     </div>
     <script src="main.js" type="module"></script>
 </body>
