@@ -92,5 +92,29 @@ select {
     font-style: Regular;
     font-size: 50px;
     color:#003049;
-     border:#fcc049 3px solid;
+    text-shadow:#fcc049 3px solid;
+}
+header {
+    width: 75%;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+@media screen and (max-width:600px) {
+    header  {
+      flex-direction: column;
+      text-align: center;
+    }
+    images/cabecera-desktop.png {
+        margin-top: 0px;
+    }
+
+    #headerImage {
+        margin-top: 0px;
+    }
 }
