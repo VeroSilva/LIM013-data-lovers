@@ -6,3 +6,12 @@ font-family: 'Open Sans', sans-serif;*/
 *{
     background-color: #E5103F;
 }
+.title{
+    font-family: Anton;
+    font-style: Regular;
+    font-size: 50px;
+}
+.stroke {
+    -webkit-text-fill-color: #003049;
+    -webkit-text-stroke: 3px #fcc049;
+    }
