@@ -1,17 +1,96 @@
-/*
-Fuentes a utilizar
-font-family: 'Anton', sans-serif;
-
-font-family: 'Open Sans', sans-serif;*/
-*{
-    background-color: #E5103F;
+body {
+    background-image: url("images/fondo-bienvenida.jpg");
+    background-position: center;
+    background-size: cover;
 }
+
+
+/*Pantalla completa y pantalla principal centrada*/
+
+#general {
+    background: #E5103F;
+    width: 75%;
+    height: 100vh;
+    margin: auto;
+}
+
+
+/*Navegación*/
+
+nav {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+nav * {
+    margin: 10px;
+}
+
+.search {
+    width: 500px;
+    border: none;
+    border-radius: 10px;
+    -webkit-box-shadow: -3px 7px 33px -11px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -3px 7px 33px -11px rgba(0, 0, 0, 0.75);
+    box-shadow: -3px 7px 33px -11px rgba(0, 0, 0, 0.75);
+}
+
+.order-title {
+    border-radius: 10px;
+    background-color: #FCBF49;
+    border: none;
+    color: #F6F2DF;
+    font-size: 21px;
+    margin: 0px;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    padding: 10px 0px 10px 15px;
+}
+
+.select {
+    background: #FCBF49;
+    width: 180px;
+    border-radius: 10px;
+    -webkit-box-shadow: -3px 7px 33px -11px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -3px 7px 33px -11px rgba(0, 0, 0, 0.75);
+    box-shadow: -3px 7px 33px -11px rgba(0, 0, 0, 0.75);
+}
+
+.select::after {
+    content: '\25BC';
+    top: 0;
+    right: 0px;
+    color: #F6F2DF;
+    cursor: pointer;
+}
+
+.random {
+    width: 80px;
+    background-color: #FCBF49;
+    border-radius: 10px;
+    justify-content: center;
+    display: flex;
+    -webkit-box-shadow: -3px 7px 33px -11px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -3px 7px 33px -11px rgba(0, 0, 0, 0.75);
+    box-shadow: -3px 7px 33px -11px rgba(0, 0, 0, 0.75);
+}
+
+.random img {
+    width: 40px;
+    margin: 10px;
+}
+
 .title{
     font-family: Anton;
     font-style: Regular;
     font-size: 50px;
+    color:#003049;
+     border:#fcc049 3px solid;
 }
-.stroke {
-    -webkit-text-fill-color: #003049;
-    -webkit-text-stroke: 3px #fcc049;
-    }
