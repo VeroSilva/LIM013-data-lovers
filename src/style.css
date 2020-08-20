@@ -95,8 +95,20 @@ select {
     text-shadow: #fcc049 3px solid;
 }
 
-header {
-    /*width: 75%;
+.container {
+display: flex;
+flex-wrap: wrap;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+  }
+.singleImage {
+     padding: 0 50px 50px;
+     border: #003049 5px;
+}
+
+/*header {
+    width: 75%;
     margin-right: auto;
     margin-left: auto;
     display: flex;
@@ -104,8 +116,8 @@ header {
     justify-content: space-around;
     align-items: center;
     margin-top: 0px;
-    margin-bottom: 0px;*/
-}
+    margin-bottom: 0px;
+}*/
 
 @media screen and (max-width:600px) {
     /*header  {
