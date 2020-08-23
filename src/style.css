@@ -101,10 +101,28 @@ flex-wrap: wrap;
 flex-direction: row;
 align-items: center;
 justify-content: center;
+margin: auto;
   }
-.singleImage {
-     padding: 0 50px 50px;
-     border: #003049 5px;
+
+.imageContainer{
+    /*border: solid #003049 20px;*/
+    border-radius: 10%;
+    background-color: #F6F2DF;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+h2 {
+    display:flex;
+    color: #F6F2DF;
+    font-family: 'Anton', sans-serif;
+    justify-content: center;
+    
+}
+.card {
+    background-color: #003049;
+    border-radius: 10px;
+    margin: 10px;
 }
 
 /*header {
