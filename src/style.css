@@ -2,6 +2,7 @@ body {
     background-image: url("images/fondo-bienvenida.jpg");
     background-position: center;
     background-size: cover;
+    margin: 0px;
 }
 
 
@@ -93,6 +94,10 @@ select {
     font-size: 50px;
     color: #003049;
     text-shadow: #fcc049 3px solid;
+}
+
+#headerImage {
+    width: 100%;
 }
 
 header {
