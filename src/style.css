@@ -95,8 +95,38 @@ select {
     text-shadow: #fcc049 3px solid;
 }
 
-header {
-    /*width: 75%;
+.container {
+display: flex;
+flex-wrap: wrap;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+margin: auto;
+  }
+
+.imageContainer{
+    /*border: solid #003049 20px;*/
+    border-radius: 10%;
+    background-color: #F6F2DF;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+h2 {
+    display:flex;
+    color: #F6F2DF;
+    font-family: 'Anton', sans-serif;
+    justify-content: center;
+    
+}
+.card {
+    background-color: #003049;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+/*header {
+    width: 75%;
     margin-right: auto;
     margin-left: auto;
     display: flex;
@@ -104,8 +134,8 @@ header {
     justify-content: space-around;
     align-items: center;
     margin-top: 0px;
-    margin-bottom: 0px;*/
-}
+    margin-bottom: 0px;
+}*/
 
 @media screen and (max-width:600px) {
     /*header  {
