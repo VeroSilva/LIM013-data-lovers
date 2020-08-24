@@ -12,7 +12,7 @@ for (var i = 0; i < typeButton.length; i++) {
 function typeShow(e) {
     data.pokemon.forEach(element => {
         if (element.type.includes(e)) {
-            console.log(element.name)
+            document.getElementById("galery").innerHTML += element.name + " ";
         }
     });
 }
