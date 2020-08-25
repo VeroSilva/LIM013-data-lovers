@@ -1,6 +1,5 @@
 body {
-    background-image: url("images/fondo-bienvenida.jpg");
-    background-position: center;
+    background: url("images/fondo-bienvenida.jpg") no-repeat fixed center;
     background-size: cover;
     margin: 0px;
 }
@@ -22,7 +21,7 @@ body {
 #general {
     background: #E5103F;
     width: 75%;
-    height: 100vh;
+    min-height: 100vh;
     margin: auto;
     position: relative;
 }

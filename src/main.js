@@ -25,17 +25,15 @@ for (let k = 0; k < eachPokemon.length; k++) {
 const typeButton = document.getElementsByClassName("type");
 for (let j = 0; j < typeButton.length; j++) {
     typeButton[j].addEventListener("click", function(event) {
-        let dataType = event.target.getAttribute("data-type");
-        dataFile.filterType(dataType);
-        document.getElementById("menu-sidebar").classList.add("hide");
-        document.getElementById("menu-sidebar").classList.remove("display");
-    })
-    typeButton[j].addEventListener("click", function() {
         let eachCard = document.querySelectorAll(".card");
         for (let m = 0; m < eachCard.length; m++) {
             eachCard[m].style.display = "none";
         }
 
+        let dataType = event.target.getAttribute("data-type");
+        dataFile.filterType(dataType);
+        document.getElementById("menu-sidebar").classList.add("hide");
+        document.getElementById("menu-sidebar").classList.remove("display");
     })
 }
 //Mostrar el menú hamburguesa
