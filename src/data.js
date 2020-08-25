@@ -5,7 +5,7 @@ const filter = {
     filterType: function(dataType) {
         data.pokemon.forEach(element => {
             if (element.type.includes(dataType)) {
-                let showType = document.querySelectorAll(".card." + dataType);
+                let showType = document.querySelectorAll(`.card.${dataType}`);
                 for (let i = 0; i < showType.length; i++) {
                     showType[i].style.display = "block";
                 }
