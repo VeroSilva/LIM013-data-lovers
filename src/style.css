@@ -24,6 +24,7 @@ body {
     width: 75%;
     height: 100vh;
     margin: auto;
+    position: relative;
 }
 
 
@@ -101,10 +102,14 @@ select {
 
 .title {
     font-family: Anton;
-    font-style: Regular;
     font-size: 50px;
     color: #003049;
-    text-shadow: #fcc049 3px solid;
+    text-align: right;
+    margin: 0px;
+    top: 10%;
+    right: 8%;
+    position: absolute;
+   
 }
 
 #headerImage {
@@ -134,12 +139,14 @@ h2 {
     align-items: center;
     justify-content: center;
     margin: auto;
+
 }
 
 .card {
     background-color: #003049;
     border-radius: 10px;
     margin: 10px;
+    box-shadow: 10px 5px 5px black;
 }
 
 .menu-sidebar {
@@ -162,4 +169,9 @@ h2 {
 .menu-sidebar>h2 {
     color: #003049;
     font-size: 60px;
+}
+#menuHamburguesa{
+    top: 1%;
+    left: 7%;
+    position: absolute;
 }
