@@ -24,6 +24,7 @@ body {
     width: 75%;
     height: 100vh;
     margin: auto;
+    position: relative;
 }
 
 
@@ -106,8 +107,8 @@ select {
     text-align: right;
     margin: 0px;
     top: 10%;
-    right: 15%;
-    position: fixed;
+    right: 8%;
+    position: absolute;
    
 }
 
@@ -138,12 +139,14 @@ h2 {
     align-items: center;
     justify-content: center;
     margin: auto;
+
 }
 
 .card {
     background-color: #003049;
     border-radius: 10px;
     margin: 10px;
+    box-shadow: 10px 5px 5px black;
 }
 
 .menu-sidebar {
@@ -169,6 +172,6 @@ h2 {
 }
 #menuHamburguesa{
     top: 1%;
-    left: 20%;
-    position: fixed;
+    left: 7%;
+    position: absolute;
 }
