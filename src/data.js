@@ -7,8 +7,7 @@ const filter = {
             if (element.type.includes(dataType)) {
                 let showType = document.querySelectorAll(".card." + dataType);
                 for (let i = 0; i < showType.length; i++) {
-                    showType[i].classList.add("display");
-                    console.log(showType[i]);
+                    showType[i].style.display = "block";
                 }
             }
         });
