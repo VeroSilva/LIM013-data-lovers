@@ -1,9 +1,15 @@
-// estas funciones son de ejemplo
+import data from './data/pokemon/pokemon.js';
 
-export const example = () => {
-    return 'example';
-};
+//Funcion de filtrado por tipo
+const filter = {
+    filterType: function(dataType) {
+        data.pokemon.forEach(element => {
+            if (element.type.includes(dataType)) {
+                document.getElementById("galery").innerHTML += element.name + " ";
+            }
+        });
+    },
+}
 
-export const anotherExample = () => {
-    return 'OMG';
-};
+
+export default filter;

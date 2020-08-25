@@ -6,6 +6,17 @@ body {
 }
 
 
+/*Funcionalidad para mostrar y ocultar elementos*/
+
+.display {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+
 /*Pantalla completa y pantalla principal centrada*/
 
 #general {
@@ -100,19 +111,8 @@ select {
     width: 100%;
 }
 
-header {
-    /*width: 75%;
-.container {
-display: flex;
-flex-wrap: wrap;
-flex-direction: row;
-align-items: center;
-justify-content: center;
-margin: auto;
-  }
-
-.imageContainer{
-    /*border: solid #003049 20px;*/
+.imageContainer {
+    border: solid #003049 20px;
     border-radius: 10%;
     background-color: #F6F2DF;
     margin: 10px;
@@ -127,35 +127,39 @@ h2 {
     justify-content: center;
 }
 
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
 .card {
     background-color: #003049;
     border-radius: 10px;
     margin: 10px;
 }
 
+.menu-sidebar {
+    position: absolute;
+    width: 30%;
+    background: #F6F2DF;
+    height: 100vh;
+}
 
-/*header {
-    width: 75%;
-    margin-right: auto;
-    margin-left: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 0px;
-    margin-bottom: 0px;
-}*/
+.menu-sidebar .type {
+    width: 100%;
+    margin-top: 15px;
+}
 
-@media screen and (max-width:600px) {
-    /*header  {
-      flex-direction: column;
-      text-align: center;
-    }
-    images/cabecera-desktop.png {
-        margin-top: 0px;
-    }
+.buttons {
+    margin: auto;
+    width: 70%;
+}
 
-    #headerImage {
-        margin-top: 0px;
-    }*/
+.menu-sidebar>h2 {
+    color: #003049;
+    font-size: 60px;
 }

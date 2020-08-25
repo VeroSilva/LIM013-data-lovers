@@ -1,38 +1,40 @@
-import { example } from './data.js';
-// import data from './data/lol/lol.js';
+import dataFile from './data.js';
 import data from './data/pokemon/pokemon.js';
 
-//Insertando un nuevo nodo
-let i = 0;
-while (i <= 256) {
-    const container = document.getElementById("container");
-    const cardNew = document.createElement("div");
-    const image1 = document.createElement("img");
-    const text1 = document.createElement("h2")
+//Agregar clase a cada pokemon según su tipo
+let eachPokemon = data.pokemon;
+for (let k = 0; k < eachPokemon.length; k++) {
+    let container = document.getElementById("container");
+    let cardNew = document.createElement("div");
+    let image1 = document.createElement("img");
+    let text1 = document.createElement("h2")
     cardNew.className = "card";
     image1.className = "imageContainer";
-    image1.setAttribute("src", "https://www.serebii.net/pokemongo/pokemon/001.png", )
-    text1.textContent = "Bulbasaur";
+    image1.setAttribute("src", eachPokemon[k].img);
+    text1.textContent = eachPokemon[k].name;
     cardNew.appendChild(image1);
     cardNew.appendChild(text1);
     container.appendChild(cardNew);
-    i++
+    let eachTypePoke = eachPokemon[k].type;
+    for (let l = 0; l < eachTypePoke.length; l++) {
+        cardNew.classList.add(eachTypePoke[l]);
+    }
 }
 
-//Filtrando por tipo
+//Función de botones para filtrar por tipo
 const typeButton = document.getElementsByClassName("type");
-
-for (var i = 0; i < typeButton.length; i++) {
-    typeButton[i].addEventListener("click", function(event) {
+for (let j = 0; j < typeButton.length; j++) {
+    typeButton[j].addEventListener("click", function(event) {
         let dataType = event.target.getAttribute("data-type");
-        typeShow(dataType);
+        dataFile.filterType(dataType);
+        document.getElementById("menu-sidebar").classList.add("hide");
+        document.getElementById("menu-sidebar").classList.remove("display");
     })
 }
+//Mostrar el menú hamburguesa
 
-function typeShow(e) {
-    data.pokemon.forEach(element => {
-        if (element.type.includes(e)) {
-            document.getElementById("galery").innerHTML += element.name + " ";
-        }
-    });
-}
+const buttonMenuTypes = document.getElementById("menu-button");
+buttonMenuTypes.addEventListener("click", function() {
+    document.getElementById("menu-sidebar").classList.add("display");
+    document.getElementById("menu-sidebar").classList.remove("hide");
+})
