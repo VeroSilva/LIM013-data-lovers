@@ -19,7 +19,7 @@ body {
 /*Pantalla completa y pantalla principal centrada*/
 
 #general {
-    background: #E5103F;
+    background: aqua ;
     width: 75%;
     min-height: 100vh;
     margin: auto;
