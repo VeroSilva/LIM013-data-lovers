@@ -7,7 +7,7 @@ for (let k = 0; k < eachPokemon.length; k++) {
     let container = document.getElementById("container");
     let cardNew = document.createElement("div");
     let image1 = document.createElement("img");
-    let text1 = document.createElement("h2")
+    let text1 = document.createElement("h2");
     cardNew.className = "card";
     image1.className = "imageContainer";
     image1.setAttribute("src", eachPokemon[k].img);
@@ -29,6 +29,13 @@ for (let j = 0; j < typeButton.length; j++) {
         dataFile.filterType(dataType);
         document.getElementById("menu-sidebar").classList.add("hide");
         document.getElementById("menu-sidebar").classList.remove("display");
+    })
+    typeButton[j].addEventListener("click", function() {
+        let eachCard = document.querySelectorAll(".card");
+        for (let m = 0; m < eachCard.length; m++) {
+            eachCard[m].style.display = "none";
+        }
+
     })
 }
 //Mostrar el menú hamburguesa

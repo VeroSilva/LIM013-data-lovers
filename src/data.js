@@ -5,7 +5,12 @@ const filter = {
     filterType: function(dataType) {
         data.pokemon.forEach(element => {
             if (element.type.includes(dataType)) {
-                document.getElementById("galery").innerHTML += element.name + " ";
+                let showType = document.querySelectorAll(".card." + dataType);
+                for (let i = 0; i < showType.length; i++) {
+                    showType[i].classList.add("display");
+                    console.log(showType[i]);
+                }
+                // document.getElementById("galery").innerHTML += element.name + " ";
             }
         });
     },
