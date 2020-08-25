@@ -10,7 +10,6 @@ const filter = {
                     showType[i].classList.add("display");
                     console.log(showType[i]);
                 }
-                // document.getElementById("galery").innerHTML += element.name + " ";
             }
         });
     },
