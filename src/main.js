@@ -7,7 +7,7 @@ for (let k = 0; k < eachPokemon.length; k++) {
     let container = document.getElementById("container");
     let cardNew = document.createElement("div");
     let image1 = document.createElement("img");
-    let text1 = document.createElement("h2")
+    let text1 = document.createElement("h2");
     cardNew.className = "card";
     image1.className = "imageContainer";
     image1.setAttribute("src", eachPokemon[k].img);
@@ -25,6 +25,11 @@ for (let k = 0; k < eachPokemon.length; k++) {
 const typeButton = document.getElementsByClassName("type");
 for (let j = 0; j < typeButton.length; j++) {
     typeButton[j].addEventListener("click", function(event) {
+        let eachCard = document.querySelectorAll(".card");
+        for (let m = 0; m < eachCard.length; m++) {
+            eachCard[m].style.display = "none";
+        }
+
         let dataType = event.target.getAttribute("data-type");
         dataFile.filterType(dataType);
         document.getElementById("menu-sidebar").classList.add("hide");
