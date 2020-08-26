@@ -116,19 +116,19 @@ select {
 }
 
 .imageContainer {
-    border: solid #003049 20px;
-    border-radius: 10%;
+    border-radius: 10px;
     background-color: #F6F2DF;
-    margin: 10px;
+    margin: 15px;
     padding: 10px;
     text-align: center;
 }
 
-h2 {
+.card h2 {
     display: flex;
     color: #F6F2DF;
     font-family: 'Anton', sans-serif;
     justify-content: center;
+    margin-top: 0px;
 }
 
 .container {
@@ -144,8 +144,8 @@ h2 {
 .card {
     background-color: #003049;
     border-radius: 10px;
-    margin: 10px;
-    box-shadow: 10px 5px 5px black;
+    margin: 30px;
+    box-shadow: 7px 5px 5px rgb(0, 0, 0);
 }
 
 .menu-sidebar {
