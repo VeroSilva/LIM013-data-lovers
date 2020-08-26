@@ -43,3 +43,28 @@ buttonMenuTypes.addEventListener("click", function() {
     document.getElementById("menu-sidebar").classList.add("display");
     document.getElementById("menu-sidebar").classList.remove("hide");
 })
+//Paginacion
+const pokeCards= document.getElementsByClassName("card");
+console.log(pokeCards);
+const pokeGallery =document.getElementById("container");
+let currentPage = 1;
+let rows = 2;
+function displayList(items, wrapper, rowsPerPage, page){
+    wrapper.innerHTML = "";
+	page--;
+
+	let start = rowsPerPage * page;
+	let end = start + rowsPerPage;
+	let paginatedItems = items.slice(start, end);
+
+	for (let i = 0; i < paginatedItems.length; i++) {
+		let item = paginatedItems[i];
+
+		let item_element = document.createElement('div');
+		item_element.classList.add('item');
+		item_element.innerText = item;
+		
+		wrapper.appendChild(item_element);
+	}
+}
+
