@@ -4,6 +4,10 @@ body {
     margin: 0px;
 }
 
+h2 {
+    font-family: Anton;
+}
+
 
 /*Funcionalidad para mostrar y ocultar elementos*/
 
@@ -31,7 +35,7 @@ body {
 
 nav {
     width: 100%;
-    margin: auto;
+    margin: 40px auto;
     display: flex;
     justify-content: center;
 }
@@ -44,9 +48,9 @@ nav * {
     width: 500px;
     border: none;
     border-radius: 10px;
-    -webkit-box-shadow: -3px 7px 33px -11px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: -3px 7px 33px -11px rgba(0, 0, 0, 0.75);
-    box-shadow: -3px 7px 33px -11px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
+    -moz-box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
+    box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
 }
 
 .order-title {
@@ -70,9 +74,9 @@ select {
     background: #FCBF49;
     width: 180px;
     border-radius: 10px;
-    -webkit-box-shadow: -3px 7px 33px -11px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: -3px 7px 33px -11px rgba(0, 0, 0, 0.75);
-    box-shadow: -3px 7px 33px -11px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
+    -moz-box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
+    box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
 }
 
 .select::after {
@@ -89,9 +93,9 @@ select {
     border-radius: 10px;
     justify-content: center;
     display: flex;
-    -webkit-box-shadow: -3px 7px 33px -11px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: -3px 7px 33px -11px rgba(0, 0, 0, 0.75);
-    box-shadow: -3px 7px 33px -11px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
+    -moz-box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
+    box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
 }
 
 .random img {
@@ -108,7 +112,6 @@ select {
     top: 70px;
     right: 10px;
     position: absolute;
-   
 }
 
 #headerImage {
@@ -118,9 +121,7 @@ select {
 .imageContainer {
     border-radius: 10px;
     background-color: #F6F2DF;
-    margin: 15px;
-    padding: 10px;
-    text-align: center;
+    width: 100%;
 }
 
 .card h2 {
@@ -128,24 +129,26 @@ select {
     color: #F6F2DF;
     font-family: 'Anton', sans-serif;
     justify-content: center;
-    margin-top: 0px;
 }
 
 .container {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     margin: auto;
-
+    width: 80%;
 }
 
 .card {
     background-color: #003049;
     border-radius: 10px;
-    margin: 30px;
-    box-shadow: 7px 5px 5px rgb(0, 0, 0);
+    margin: 20px;
+    -webkit-box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
+    -moz-box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
+    box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
+    width: 15%;
+    padding: 30px;
 }
 
 .menu-sidebar {
@@ -153,6 +156,8 @@ select {
     width: 30%;
     background: #F6F2DF;
     height: 100vh;
+    overflow: scroll;
+    z-index: 2;
 }
 
 .menu-sidebar .type {
@@ -168,9 +173,105 @@ select {
 .menu-sidebar>h2 {
     color: #003049;
     font-size: 60px;
+    margin: 30px;
+    justify-content: center;
+    display: flex;
 }
-#menuHamburguesa{
+
+#menuHamburguesa {
     top: 3px;
     left: 100px;
     position: absolute;
+    top: 20px;
+    left: 180px;
+    position: absolute;
+}
+
+.type {
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+
+/*Colores botones de tipo*/
+
+.acero {
+    background: #34495E;
+}
+
+.volador {
+    background: #1A5276;
+}
+
+.agua {
+    background: #3498DB;
+}
+
+.hielo {
+    background: #76D7C4;
+}
+
+.planta {
+    background: #58D68D;
+}
+
+.bicho {
+    background: #239B56;
+}
+
+.normalA {
+    background: #B7950B;
+}
+
+.roca {
+    background: #E67E22;
+}
+
+.electrico {
+    background: #F1C40F;
+}
+
+.tierra {
+    background: #935116;
+}
+
+.fuego {
+    background: #C0392B;
+}
+
+.lucha {
+    background: #922B21;
+}
+
+.hada {
+    background: #F1948A;
+}
+
+.psiquico {
+    background: #C39BD3;
+}
+
+.venenoso {
+    background: #7D3C98;
+}
+
+.dragon {
+    background: #4A235A;
+}
+
+.fantasma {
+    background: #424949;
+}
+
+.siniestro {
+    background: #000000;
+}
+
+.type img {
+    width: 10%;
+    margin-right: 15px;
 }
