@@ -108,7 +108,6 @@ select {
     top: 70px;
     right: 10px;
     position: absolute;
-   
 }
 
 #headerImage {
@@ -138,7 +137,6 @@ select {
     align-items: center;
     justify-content: center;
     margin: auto;
-
 }
 
 .card {
@@ -169,7 +167,8 @@ select {
     color: #003049;
     font-size: 60px;
 }
-#menuHamburguesa{
+
+#menuHamburguesa {
     top: 3px;
     left: 100px;
     position: absolute;
