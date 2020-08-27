@@ -4,6 +4,17 @@ body {
     margin: 0px;
 }
 
+body:before {
+    content: "";
+    background-color: #003049;
+    opacity: 0.6;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+}
+
 h2 {
     font-family: Anton;
 }
@@ -132,7 +143,7 @@ ol {
     width: 100%;
 }
 
-.card h2 {
+.card p {
     display: flex;
     color: #F6F2DF;
     font-family: 'Anton', sans-serif;
