@@ -273,3 +273,19 @@ select {
     width: 10%;
     margin-right: 15px;
 }
+
+/*Hover de tabs*/
+.first:hover, 
+.previous:hover,
+.next:hover,
+.last:hover{
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  
+}
+.tabs{
+    display: grid;
+    grid-template-columns: repeat(4, lfr) ;
+    border-top: 1px solid black;
+}
