@@ -144,9 +144,9 @@ select {
     background-color: #003049;
     border-radius: 10px;
     margin: 20px;
-    -webkit-box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
-    -moz-box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
-    box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
+    -webkit-box-shadow: -1px 11px 11px -6px rgba(77,77,77,0.65);
+    -moz-box-shadow: -1px 11px 11px -6px rgba(77,77,77,0.65);
+    box-shadow: -1px 11px 11px -6px rgba(77,77,77,0.65);
     width: 15%;
     padding: 30px;
 }
@@ -179,12 +179,10 @@ select {
 }
 
 #menuHamburguesa {
-    top: 3px;
-    left: 100px;
     position: absolute;
-    top: 20px;
-    left: 180px;
-    position: absolute;
+    top: 10px;
+    left: 120px;
+
 }
 
 .type {
@@ -274,4 +272,22 @@ select {
 .type img {
     width: 10%;
     margin-right: 15px;
+}
+
+/*Hover de tabs*/
+.first:hover, 
+.previous:hover,
+.next:hover,
+.last:hover{
+  cursor: pointer;
+  background-color:#003049;
+  color: white;
+  
+}
+.tabs{ 
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
 }
