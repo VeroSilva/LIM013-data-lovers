@@ -2,6 +2,7 @@ body {
     background: url("images/fondo-bienvenida.jpg") no-repeat fixed center;
     background-size: cover;
     margin: 0px;
+    position: relative;
 }
 
 h2 {
@@ -150,6 +151,9 @@ select {
     width: 15%;
     padding: 30px;
 }
+.card:hover{
+    cursor: pointer;
+}
 
 .menu-sidebar {
     position: absolute;
@@ -290,4 +294,17 @@ select {
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
+}
+/*Footer*/
+footer{
+    background-color: #F6F2DF;
+    color: #003049;
+    padding: 20px;
+    font-size: 50px;
+    text-align: center;
+    font-family: "Open Sans", "sans-serif";
+    position: absolute ;
+    width: 100%;
+    z-index: 1;
+ 
 }
