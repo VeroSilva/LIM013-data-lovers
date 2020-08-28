@@ -24,7 +24,16 @@ for (let k = 0; k < page +6 ; k++) {
     }
     
 }
-console.log(lista.length)
+for (let k = 0; k < eachPokemon.length ; k++) {
+    let eachTypePoke = eachPokemon[k].type;
+    for (let l = 0; l < eachPokemon.length; l++) {
+        cardNew.classList.add(eachTypePoke[l]);
+        console.log(cardNew.classList)
+        let types = [];
+        types.push(eachTypePoke[l]);
+    }
+    
+}
 //Función de botones para filtrar por tipo
 const typeButton = document.getElementsByClassName("type");
 for (let j = 0; j < typeButton.length; j++) {
@@ -54,7 +63,7 @@ const next = document.querySelector(".next");
 const last = document.querySelector(".last");
 //Funionalidad botón next
 next.addEventListener ("click", function(){
-    page==lista.length - 6 ? (page == 0):(page += 10);
+    page==lista.length - 6 ? (page == 0):(page += 12);
     container.innerHTML = "";
     for(let o = page; o < page + 6; o++){
         let cardNew = document.createElement("div");
