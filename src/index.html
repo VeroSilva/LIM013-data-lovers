@@ -42,7 +42,9 @@
             <h1 class="title">Pokedex 2.0</h1>
         </header>
         <nav>
-            <input type="search" name="busqueda" class="search" placeholder="Búsqueda">
+            <input type="search" name="busqueda" id="search" class="search" placeholder="Búsqueda">
+            <ul class="optionsSearch" id="optionsSearch">
+            </ul>
             <!-- 
             <div class="order">
                 <ul class="order-title">
@@ -62,9 +64,10 @@
                 <img src="images/boton-aleatorio.png">
             </div>
         </nav>
-        <div id="container" class="container"></div>
+        <span class="iconify hide" id="back" data-inline="false" data-icon="ion:caret-back" style="color: #003049; font-size: 100px;"></span>
+        <div id="container" class="container">
+        </div>
         <div class="pagination" id="pagination"></div>
-        <div class="pokemodal"><img src="images/pantalla-id.png" alt=""> </div>
     </div>
     <footer>
         <span class="iconify" data-inline="false" data-icon="simple-icons:pokemon" style="color: #003049; font-size: 100px;margin: 0;"></span>

@@ -14,7 +14,7 @@ function showCards(dataArr) {
             txtClass += eachTypePoke[l] + " ";
         }
         container.innerHTML += `
-            <div class="card ${txtClass}">
+            <div class="card ${txtClass}" id="${dataArr[k].name}">
             <img src="${dataArr[k].img}" class="imageContainer">
             <p class="">${dataArr[k].name}</p>
             </div>
@@ -55,6 +55,32 @@ const buttonClosed = document.getElementById("closed");
 buttonClosed.addEventListener("click", function() {
     document.getElementById("modal-menu").classList.add("hide");
     document.getElementById("modal-menu").classList.remove("display");
+})
+//Buscador
+const inputSearch = document.getElementById("search");
+const optionsSearch = document.getElementById("optionsSearch");
+const back = document.getElementById("back");
+inputSearch.addEventListener("keypress", function(){
+    let nameList = eachPokemon.map(nombre => nombre.name);
+    if( nameList.includes(inputSearch.value)== true ){
+        let pokeName = inputSearch.value;
+        let eachCard = document.querySelectorAll(".card");
+        for (let m = 0; m < eachCard.length; m++) {
+            eachCard[m].style.display = "none";
+        }
+        document.getElementById(pokeName).style.display = "block";
+        document.getElementById("back").style.display = "block";
+        back.style.display = "block";
+    }
+})
+//Botón para volver hacia atrás
+back.addEventListener("click", function(){
+    back.style.display = "none";
+    let eachCard = document.querySelectorAll(".card");
+        for (let m = 0; m < eachCard.length; m++) {
+            eachCard[m].style.display = "block";
+        }
+
 })
 
 
