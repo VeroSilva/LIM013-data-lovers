@@ -9,8 +9,9 @@
 </head>
 
 <body>
-    <div id="general">
-        <div class="menu-sidebar hide" id="menu-sidebar">
+    <div class="modal-menu hide" id="modal-menu">
+        <div class="menu-sidebar" id="menu-sidebar">
+            <img src="images/closed-new.png" id="closed">
             <h2>TIPOS</h2>
             <div class="buttons">
                 <button class="type acero" data-type="steel"><img src="images/types/Type_Acero.png">Acero</button>
@@ -33,38 +34,34 @@
                 <button class="type siniestro" data-type="dark"><img src="images/types/Type_Siniestro.png">Siniestro</button>
             </div>
         </div>
+    </div>
+    <div id="general">
         <header>
             <img id="headerImage" src="images/cabecera-desktop.png" alt="">
-            <a href="#" id="menu-button"><img id="menuHamburguesa" src="images/boton-menu.png" width="100px" height="100px" alt=""></a>
+            <a href="#" id="menu-button"><img id="menuHamburguesa" src="images/boton-menu.png" width="100px" height="100px"></a>
             <h1 class="title">Pokedex 2.0</h1>
         </header>
         <nav>
             <input type="search" name="busqueda" class="search" placeholder="Búsqueda">
-            <div class="select">
-                <select name="Ordenar" class="order-title">
-                <option value="value1" selected disabled>Ordenar</option> 
-                <option value="value2">Más fuerte</option> 
-                <option value="value3">A-Z</option>
-                <option value="value4">Z-A</option>
-                <option value="value5">1-256</option>
-                <option value="value6">256-1</option>
-                </select>
-            </div>
+            <!-- 
+            <div class="order">
+                <ul class="order-title">
+                    <li><a href="#">Ordenar</a>
+                        <ul class="hideoptions">
+                            <li><a href="#">Más fuerte</a></li>
+                            <li><a href="#">A-Z</a></li>
+                            <li><a href="#">Z-A</a></li>
+                            <li><a href="#">1-256</a></li>
+                            <li><a href="#">256-1</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div> 
+            -->
             <div class="random">
                 <img src="images/boton-aleatorio.png">
             </div>
         </nav>
-        <div id="galery">
-
-        </div>
-        <div class="tabs" id="tabs">
-            <div class="previous">
-                <span class="iconify" data-inline="false" data-icon="bx:bx-left-arrow" style="color: #FCBF49; height: 50px; width: 50px";></span>
-            </div>
-            <div class="next">
-                <span class="iconify" data-inline="false" data-icon="bx:bx-right-arrow" style="color: #FCBF49; height: 50px; width: 50px"></span>
-            </div>
-        </div>
         <div id="container" class="container"></div>
         <div class="pagination" id="pagination"></div>
         <div class="pokemodal"><img src="images/pantalla-id.png" alt=""> </div>
