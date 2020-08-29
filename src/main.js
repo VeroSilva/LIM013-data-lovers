@@ -41,8 +41,8 @@ for (let j = 0; j < typeButton.length; j++) {
         document.getElementById("modal-menu").classList.remove("display");
     })
 }
-//Mostrar el menú hamburguesa
 
+//Mostrar el menú hamburguesa
 const buttonMenuTypes = document.getElementById("menu-button");
 buttonMenuTypes.addEventListener("click", function() {
     document.getElementById("modal-menu").classList.add("display");
@@ -55,6 +55,13 @@ const buttonClosed = document.getElementById("closed");
 buttonClosed.addEventListener("click", function() {
     document.getElementById("modal-menu").classList.add("hide");
     document.getElementById("modal-menu").classList.remove("display");
+})
+
+//Eliminando etiqueta
+const buttonRemove = document.getElementById("closed-white");
+buttonRemove.addEventListener("click", function() {
+    document.getElementById("counter-type").classList.add("hide");
+    showCards(eachPokemon);
 })
 
 
