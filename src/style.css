@@ -390,3 +390,6 @@ footer{
 #counter-type {
     margin-bottom: 50px;
 }
+#back:hover{
+    cursor: pointer;
+}

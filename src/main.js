@@ -5,8 +5,10 @@ const typeButton = document.getElementsByClassName("type");
 const counterType = document.getElementById("counter-type");
 const buttonMenuTypes = document.getElementById("menu-button");
 const buttonClosed = document.getElementById("closed");
+const inputSearch = document.getElementById("search");
+const back = document.getElementById("back");
+let container = document.getElementById("container");
 let eachPokemon = dataFile.listAll();
-
 //Mostrar las cartas en la galería
 function showCards(dataArr) {
     let container = document.getElementById("container");
@@ -19,7 +21,7 @@ function showCards(dataArr) {
             txtClass += eachTypePoke[l] + " ";
         }
         container.innerHTML += `
-            <div class="card ${txtClass}">
+            <div class="card ${txtClass}" id="${dataArr[k].name}">
             <img src="${dataArr[k].img}" class="imageContainer">
             <p class="">${dataArr[k].name}</p>
             </div>
@@ -62,7 +64,20 @@ buttonClosed.addEventListener("click", function() {
     document.getElementById("modal-menu").classList.add("hide");
     document.getElementById("modal-menu").classList.remove("display");
 })
-
+//Buscador
+inputSearch.addEventListener("keyup", function(e){
+    let pokemonDataByName = dataFile.filterByName(e.target.value);
+    document.getElementById("container").innerHTML = "";
+    showCards(pokemonDataByName);
+})
+//Botón para volver hacia atrás
+back.addEventListener("click", function(){
+    let eachCard = document.querySelectorAll(".card");
+        for (let m = 0; m < eachCard.length; m++) {
+            eachCard[m].style.display = "block";
+        }
+        back.style.display = "none";
+})
 //Capturar el tipo de pokemon
 for (let j = 0; j < typeButton.length; j++) {
     typeButton[j].addEventListener("click", function(event) {
