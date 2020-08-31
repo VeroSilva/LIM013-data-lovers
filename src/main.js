@@ -1,6 +1,7 @@
 import dataFile from './data.js';
 import data from './data/pokemon/pokemon.js';
-
+//Lista de nombre
+const nameList = data.pokemon.map(nombre => nombre.name);
 //Agregar clase a cada pokemon según su tipo
 
 function showCards(dataArr) {
@@ -60,9 +61,11 @@ buttonClosed.addEventListener("click", function() {
 const inputSearch = document.getElementById("search");
 const optionsSearch = document.getElementById("optionsSearch");
 const back = document.getElementById("back");
+let container = document.getElementById("container");
+
 inputSearch.addEventListener("keypress", function(){
     let nameList = eachPokemon.map(nombre => nombre.name);
-    if( nameList.includes(inputSearch.value)== true ){
+    if( nameList.includes(inputSearch.value.toLowerCase())== true ){
         let pokeName = inputSearch.value;
         let eachCard = document.querySelectorAll(".card");
         for (let m = 0; m < eachCard.length; m++) {
@@ -73,15 +76,20 @@ inputSearch.addEventListener("keypress", function(){
         back.style.display = "block";
     }
 })
+inputSearch.addEventListener("keyup", function(e){
+    const listaDeNombres =  nameList.filter(nombre => nombre.indexOf(inputSearch.value) === 0 );
+    console.log("Filtrado", listaDeNombres, e.target.value);
+
+})
 //Botón para volver hacia atrás
 back.addEventListener("click", function(){
-    back.style.display = "none";
     let eachCard = document.querySelectorAll(".card");
         for (let m = 0; m < eachCard.length; m++) {
             eachCard[m].style.display = "block";
         }
-
+        back.style.display = "none";
 })
+//Creando lista de opciones de buscador
 
 
 //Paginacion 
