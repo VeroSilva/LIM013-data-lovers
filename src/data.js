@@ -6,11 +6,11 @@ const dataPokemon = {
         return data.pokemon;
     },
     filterByType: function(pokemonType) {
-        let pokemonTypeFiltered = data.pokemon.filter(element => element.type.includes(pokemonType));
+        const pokemonTypeFiltered = data.pokemon.filter(element => element.type.includes(pokemonType));
         return pokemonTypeFiltered;
     },
     filterByName: function(pokemonName) {
-        let pokemonNameFiltered = data.pokemon.filter(element => element.name.includes(pokemonName));
+        const pokemonNameFiltered = data.pokemon.filter(element => element.name.includes(pokemonName));
         return pokemonNameFiltered;
     }
 }

@@ -393,3 +393,7 @@ footer{
 #back:hover{
     cursor: pointer;
 }
+.span1 {
+    color: #003049; 
+    font-size: 100px;
+}

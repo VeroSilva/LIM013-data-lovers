@@ -7,13 +7,12 @@ const buttonMenuTypes = document.getElementById("menu-button");
 const buttonClosed = document.getElementById("closed");
 const inputSearch = document.getElementById("search");
 const back = document.getElementById("back");
-let container = document.getElementById("container");
-let eachPokemon = dataFile.listAll();
+const container = document.getElementById("container");
+const eachPokemon = dataFile.listAll();
 //Mostrar las cartas en la galería
 function showCards(dataArr) {
     let container = document.getElementById("container");
     container.innerHTML = "";
-
     for (let k = 0; k < dataArr.length; k++) {
         let txtClass = "";
         let eachTypePoke = dataArr[k].type;
@@ -32,7 +31,6 @@ function showCards(dataArr) {
 //Filtrar por tipo
 function filterPokemonByType(pokemonType) {
     let pokemonDataByType = dataFile.filterByType(pokemonType);
-    document.getElementById("container").innerHTML = "";
     showCards(pokemonDataByType);
     document.getElementById("modal-menu").classList.add("hide");
     document.getElementById("modal-menu").classList.remove("display");
@@ -66,17 +64,8 @@ buttonClosed.addEventListener("click", function() {
 })
 //Buscador
 inputSearch.addEventListener("keyup", function(e){
-    let pokemonDataByName = dataFile.filterByName(e.target.value);
-    document.getElementById("container").innerHTML = "";
+    const pokemonDataByName = dataFile.filterByName(e.target.value);
     showCards(pokemonDataByName);
-})
-//Botón para volver hacia atrás
-back.addEventListener("click", function(){
-    let eachCard = document.querySelectorAll(".card");
-        for (let m = 0; m < eachCard.length; m++) {
-            eachCard[m].style.display = "block";
-        }
-        back.style.display = "none";
 })
 //Capturar el tipo de pokemon
 for (let j = 0; j < typeButton.length; j++) {
