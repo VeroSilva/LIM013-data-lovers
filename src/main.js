@@ -1,8 +1,13 @@
 import dataFile from './data.js';
-import data from './data/pokemon/pokemon.js';
 
-//Agregar clase a cada pokemon según su tipo
+//Declaracion de variables globales
+const typeButton = document.getElementsByClassName("type");
+const counterType = document.getElementById("counter-type");
+const buttonMenuTypes = document.getElementById("menu-button");
+const buttonClosed = document.getElementById("closed");
+let eachPokemon = dataFile.listAll();
 
+//Mostrar las cartas en la galería
 function showCards(dataArr) {
     let container = document.getElementById("container");
     container.innerHTML = "";
@@ -22,40 +27,53 @@ function showCards(dataArr) {
     }
 }
 
-//Escibiendola
-let eachPokemon = data.pokemon;
-showCards(eachPokemon);
+//Filtrar por tipo
+function filterPokemonByType(pokemonType) {
+    let pokemonDataByType = dataFile.filterByType(pokemonType);
+    document.getElementById("container").innerHTML = "";
+    showCards(pokemonDataByType);
+    document.getElementById("modal-menu").classList.add("hide");
+    document.getElementById("modal-menu").classList.remove("display");
 
-//Función de botones para filtrar por tipo
-const typeButton = document.getElementsByClassName("type");
-for (let j = 0; j < typeButton.length; j++) {
-    typeButton[j].addEventListener("click", function(event) {
-        let eachCard = document.querySelectorAll(".card");
-        for (let m = 0; m < eachCard.length; m++) {
-            eachCard[m].style.display = "none";
-        }
+    counterType.innerHTML = `
+    <div class="sticker ${pokemonType}-sticker">
+    <img src="images/types/${pokemonType}.png">
+    <p class="sticker-type">${pokemonType}</p>
+    <img src="images/closed-white.png" id="closed-white">
+    </div>
+    <p class="counter-type">Total: ${pokemonDataByType.length}</p>
+    `
 
-        let dataType = event.target.getAttribute("data-type");
-        dataFile.filterType(dataType);
-        document.getElementById("modal-menu").classList.add("hide");
-        document.getElementById("modal-menu").classList.remove("display");
+    const buttonRemove = document.getElementById("closed-white");
+    buttonRemove.addEventListener("click", function() {
+        counterType.innerHTML = "";
+        showCards(eachPokemon);
     })
 }
-//Mostrar el menú hamburguesa
 
-const buttonMenuTypes = document.getElementById("menu-button");
+//Mostrar el menú hamburguesa
 buttonMenuTypes.addEventListener("click", function() {
     document.getElementById("modal-menu").classList.add("display");
     document.getElementById("modal-menu").classList.remove("hide");
 })
 
 //Cerrar menu hamburguesa
-
-const buttonClosed = document.getElementById("closed");
 buttonClosed.addEventListener("click", function() {
     document.getElementById("modal-menu").classList.add("hide");
     document.getElementById("modal-menu").classList.remove("display");
 })
+
+//Capturar el tipo de pokemon
+for (let j = 0; j < typeButton.length; j++) {
+    typeButton[j].addEventListener("click", function(event) {
+        let pokemonType = event.target.getAttribute("data-type");
+        filterPokemonByType(pokemonType)
+    })
+}
+
+showCards(eachPokemon);
+
+
 
 
 //Paginacion 
