@@ -78,6 +78,7 @@ inputSearch.addEventListener("keypress", function(){
 })
 inputSearch.addEventListener("keyup", function(e){
     const listaDeNombres =  nameList.filter(nombre => nombre.indexOf(inputSearch.value) === 0 );
+    /* listaDeNombres.forEach(element, element == ) */
     console.log("Filtrado", listaDeNombres, e.target.value);
 
 })
