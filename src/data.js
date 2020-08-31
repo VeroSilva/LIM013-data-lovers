@@ -1,17 +1,18 @@
 import data from './data/pokemon/pokemon.js';
 
 //Funcion de filtrado por tipo
-const filter = {
-    filterType: function(dataType) {
-        let dataTypeD = data.pokemon.filter(element => element.type.includes(dataType))
-        if (dataTypeD) {
-            let showType = document.querySelectorAll(`.card.${dataType}`);
-            for (let i = 0; i < showType.length; i++) {
-                showType[i].style.display = "block";
-            }
-        }
+const dataPokemon = {
+    listAll: function() {
+        return data.pokemon;
     },
+    filterByType: function(pokemonType) {
+        let pokemonTypeFiltered = data.pokemon.filter(element => element.type.includes(pokemonType));
+        return pokemonTypeFiltered;
+    }
 }
 
 
-export default filter;
+
+
+
+export default dataPokemon;

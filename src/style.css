@@ -16,8 +16,15 @@ body:before {
     position: fixed;
 }
 
-h2 {
-    font-family: Anton;
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Anton';
+}
+
+p {
+    font-family: 'Open sans';
 }
 
 
@@ -50,6 +57,7 @@ nav {
     margin: 40px auto;
     display: flex;
     justify-content: center;
+    height: auto;
 }
 
 nav * {
@@ -65,47 +73,46 @@ nav * {
     box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
 }
 
-
-/* ul,
-ol {
-    list-style: none;
-}
-
-.order-title li a {
-    background-color: #FCBF49;
-    color: #F6F2DF;
-    text-decoration: none;
-    font-size: 21px;
-    padding: 10px 15px;
-    display: block;
-}
-
-.order-title>li {
-    float: left;
-}
-
-.order-title li a:hover {
-    background-color: #FCB322;
-}
-
-.order-title li ul {
-    display: none;
-    position: absolute;
-}
-
-.order-title li:hover>ul {
-    display: block;
-} */
-
-
-/* .order {
-    background: #FCBF49;
-    width: 180px;
+.buttonOrder {
+    background-color: #fcbf49;
+    color: white;
     border-radius: 10px;
+    width: 150px;
+    padding: 15px;
+    border: none;
+    font-size: 1.5em;
+    margin: 0px;
+}
+
+.order {
     -webkit-box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
     -moz-box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
     box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
-} */
+}
+
+.links a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 15px;
+    margin: 0;
+}
+
+.links {
+    background-color: #fcbf49;
+    display: none;
+    width: 150px;
+    margin: 0px 0px 0px 30px;
+}
+
+.links a:hover {
+    background-color: #fcb322;
+}
+
+.order:hover .links {
+    display: block;
+    position: absolute;
+}
 
 .random {
     width: 80px;
@@ -241,75 +248,93 @@ ol {
 
 /*Colores botones de tipo*/
 
-.acero {
+.acero,
+.steel-sticker {
     background: #34495E;
 }
 
-.volador {
+.volador,
+.flying-sticker {
     background: #1A5276;
 }
 
-.agua {
+.agua,
+.water-sticker {
     background: #3498DB;
 }
 
-.hielo {
+.hielo,
+.ice-sticker {
     background: #76D7C4;
 }
 
-.planta {
+.planta,
+.grass-sticker {
     background: #58D68D;
 }
 
-.bicho {
+.bicho,
+.bug-sticker {
     background: #239B56;
 }
 
-.normalA {
+.normalA,
+.normal-sticker {
     background: #B7950B;
 }
 
-.roca {
+.roca,
+.rock-sticker {
     background: #E67E22;
 }
 
-.electrico {
+.electrico,
+.electric-sticker {
     background: #F1C40F;
 }
 
-.tierra {
+.tierra,
+.ground-sticker {
     background: #935116;
 }
 
-.fuego {
+.fuego,
+.fire-sticker {
     background: #C0392B;
 }
 
-.lucha {
+.lucha,
+.fighting-sticker {
     background: #922B21;
 }
 
-.hada {
+.hada,
+.fairy-sticker {
     background: #F1948A;
 }
 
-.psiquico {
+.psiquico,
+.psychic-sticker {
     background: #C39BD3;
 }
 
-.venenoso {
+.venenoso,
+.poison-sticker {
     background: #7D3C98;
 }
 
-.dragon {
+.dragon,
+.dragon-sticker {
     background: #4A235A;
 }
 
-.fantasma {
+.fantasma,
+.ghost-sticker {
     background: #424949;
 }
 
-.siniestro {
+.siniestro,
+.dark-sticker {
     background: #000000;
 }
 
@@ -319,22 +344,34 @@ ol {
 }
 
 
-/*Hover de tabs*/
+/*Etiquetas de tipo*/
 
-.first:hover,
-.previous:hover,
-.next:hover,
-.last:hover {
-    cursor: pointer;
-    background-color: #003049;
+.sticker-type {
+    font-size: 1.4em;
     color: white;
+    border-radius: 0px 10px 10px 0px;
+    font-weight: bold;
+    margin: 20px;
 }
 
-.tabs {
+.sticker {
+    width: 30%;
     display: flex;
-    flex-direction: row;
-    margin-left: auto;
-    margin-right: auto;
+    justify-content: space-between;
+}
+
+.sticker img {
+    width: 30px;
+    height: 30px;
+    margin: 20px;
+}
+
+.counter-type {
+    color: #f6f2df;
+    font-size: 2em;
+    width: 30%;
+    margin: 15px auto;
+    display: flex;
     justify-content: center;
 }
 /*Footer*/
@@ -349,4 +386,7 @@ footer{
     width: 100%;
     z-index: 1;
  
+
+#counter-type {
+    margin-bottom: 50px;
 }
