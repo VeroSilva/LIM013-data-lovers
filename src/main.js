@@ -38,12 +38,11 @@ function filterPokemonByType(pokemonType) {
     document.getElementById("modal-menu").classList.remove("display");
 
     counterType.innerHTML = `
-    <div class="sticker ${pokemonType}-sticker">
+    <div class="sticker">
     <img src="images/types/${pokemonType}.png">
-    <p class="sticker-type">${pokemonType}</p>
-    <img src="images/closed-white.png" id="closed-white">
+    <p class="sticker-type">${pokemonType}: ${pokemonDataByType.length}</p>
+    <img src="images/closed-new.png" id="closed-sticker">
     </div>
-    <p class="counter-type">Total: ${pokemonDataByType.length}</p>
     `
 
     const buttonRemove = document.getElementById("closed-white");
