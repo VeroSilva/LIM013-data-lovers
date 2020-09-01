@@ -45,7 +45,7 @@ function filterPokemonByType(pokemonType) {
     </div>
     `
 
-    const buttonRemove = document.getElementById("closed-white");
+    const buttonRemove = document.getElementById("closed-sticker");
     buttonRemove.addEventListener("click", function() {
         counterType.innerHTML = "";
         showCards(eachPokemon);
