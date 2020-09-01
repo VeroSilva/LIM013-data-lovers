@@ -30,7 +30,7 @@ function showCards(dataArr) {
 
 //Filtrar por tipo
 function filterPokemonByType(pokemonType) {
-    let pokemonDataByType = dataFile.filterByType(pokemonType);
+    const pokemonDataByType = dataFile.filterByType(pokemonType);
     showCards(pokemonDataByType);
     document.getElementById("modal-menu").classList.add("hide");
     document.getElementById("modal-menu").classList.remove("display");
@@ -48,25 +48,25 @@ function filterPokemonByType(pokemonType) {
     buttonRemove.addEventListener("click", function() {
         counterType.innerHTML = "";
         showCards(eachPokemon);
-    })
-}
+    });
+};
 
 //Mostrar el menú hamburguesa
 buttonMenuTypes.addEventListener("click", function() {
     document.getElementById("modal-menu").classList.add("display");
     document.getElementById("modal-menu").classList.remove("hide");
-})
+});
 
 //Cerrar menu hamburguesa
 buttonClosed.addEventListener("click", function() {
     document.getElementById("modal-menu").classList.add("hide");
     document.getElementById("modal-menu").classList.remove("display");
-})
+});
 //Buscador
 inputSearch.addEventListener("keyup", function(e){
     const pokemonDataByName = dataFile.filterByName(e.target.value);
     showCards(pokemonDataByName);
-})
+});
 //Capturar el tipo de pokemon
 for (let j = 0; j < typeButton.length; j++) {
     typeButton[j].addEventListener("click", function(event) {
