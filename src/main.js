@@ -5,13 +5,15 @@ const typeButton = document.getElementsByClassName("type");
 const counterType = document.getElementById("counter-type");
 const buttonMenuTypes = document.getElementById("menu-button");
 const buttonClosed = document.getElementById("closed");
-let eachPokemon = dataFile.listAll();
+const inputSearch = document.getElementById("search");
+const orderAz = document.getElementById("a-z");
+const orderZa = document.getElementById("z-a");
+const eachPokemon = dataFile.listAll();
 
 //Mostrar las cartas en la galería
 function showCards(dataArr) {
     let container = document.getElementById("container");
     container.innerHTML = "";
-
     for (let k = 0; k < dataArr.length; k++) {
         let txtClass = "";
         let eachTypePoke = dataArr[k].type;
@@ -19,7 +21,7 @@ function showCards(dataArr) {
             txtClass += eachTypePoke[l] + " ";
         }
         container.innerHTML += `
-            <div class="card ${txtClass}">
+            <div class="card ${txtClass}" id="${dataArr[k].name}">
             <img src="${dataArr[k].img}" class="imageContainer">
             <p class="">${dataArr[k].name}</p>
             </div>
@@ -63,6 +65,12 @@ buttonClosed.addEventListener("click", function() {
     document.getElementById("modal-menu").classList.remove("display");
 })
 
+//Buscador
+inputSearch.addEventListener("keyup", function(e) {
+    const pokemonDataByName = dataFile.filterByName(e.target.value);
+    showCards(pokemonDataByName);
+})
+
 //Capturar el tipo de pokemon
 for (let j = 0; j < typeButton.length; j++) {
     typeButton[j].addEventListener("click", function(event) {
@@ -70,6 +78,17 @@ for (let j = 0; j < typeButton.length; j++) {
         filterPokemonByType(pokemonType)
     })
 }
+
+//Ordenar alfabeticamente
+orderAz.addEventListener("click", function() {
+    const orderAz = dataFile.orderAlphabeticallyAz();
+    showCards(orderAz);
+})
+
+orderZa.addEventListener("click", function() {
+    const orderZa = dataFile.orderAlphabeticallyZa();
+    showCards(orderZa);
+})
 
 showCards(eachPokemon);
 
