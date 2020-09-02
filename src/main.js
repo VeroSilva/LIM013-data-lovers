@@ -1,4 +1,4 @@
-import dataFile from './data.js';
+import { dataUtilities } from './data.js';
 
 //Declaracion de variables globales
 const typeButton = document.getElementsByClassName("type");
@@ -8,7 +8,7 @@ const buttonClosed = document.getElementById("closed");
 const inputSearch = document.getElementById("search");
 const orderAz = document.getElementById("a-z");
 const orderZa = document.getElementById("z-a");
-const eachPokemon = dataFile.listAll();
+const eachPokemon = dataUtilities.listAll();
 
 
 //Mostrar las cartas en la galería
@@ -34,7 +34,7 @@ function showCards(dataArr) {
 
 //Filtrar por tipo
 function filterPokemonByType(pokemonType) {
-    let pokemonDataByType = dataFile.filterByType(pokemonType);
+    let pokemonDataByType = dataUtilities.filterByType(pokemonType);
     const templateCards = `
     <div class="sticker">
     <img src="images/types/${pokemonType}.png">
@@ -72,7 +72,7 @@ buttonClosed.addEventListener("click", function() {
 
 //Buscador
 inputSearch.addEventListener("keyup", function(e) {
-    const pokemonDataByName = dataFile.filterByName(e.target.value);
+    const pokemonDataByName = dataUtilities.filterByName(e.target.value);
     showCards(pokemonDataByName);
 })
 
@@ -86,12 +86,12 @@ for (let j = 0; j < typeButton.length; j++) {
 
 //Ordenar alfabeticamente
 orderAz.addEventListener("click", function() {
-    const orderAz = dataFile.orderAlphabeticallyAz();
+    const orderAz = dataUtilities.orderAlphabeticallyAz();
     showCards(orderAz);
 })
 
 orderZa.addEventListener("click", function() {
-    const orderZa = dataFile.orderAlphabeticallyZa();
+    const orderZa = dataUtilities.orderAlphabeticallyZa();
     showCards(orderZa);
 })
 

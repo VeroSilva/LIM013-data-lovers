@@ -1,32 +1,46 @@
-import { filter } from '../src/data.js';
+import { dataUtilities } from '../src/data.js';
+import data from '../src/data/pokemon/pokemon.js';
 
-// describe('example', () => {
-//     it('is a function', () => {
-//         expect(typeof example).toBe('function');
-//     });
+//Test de listado
+describe('dataUtilities.listAll', () => {
 
-//     it('returns `example`', () => {
-//         expect(example()).toBe('example');
-//     });
-// });
-
-
-// describe('anotherExample', () => {
-//     it('is a function', () => {
-//         expect(typeof anotherExample).toBe('function');
-//     });
-
-//     it('returns `anotherExample`', () => {
-//         expect(anotherExample()).toBe('OMG');
-//     });
-// });
-
-describe('filter', () => {
-    it('is a function', () => {
-        expect(typeof filterType).toBe('function')
+    it('should be a function', () => {
+        expect(typeof dataUtilities.listAll).toBe('function')
     });
 
-    it('Clase igual que el tipo', () => {
-        expect(typeof filter.filterType.dataType).toBe('Array')
-    })
+    it('should list all objects', () => {
+        const listAllData = data.pokemon;
+
+        expect(dataUtilities.listAll(listAllData)).toEqual(listAllData);
+    });
+})
+
+//Test de filtrado por tipo
+describe('dataUtilities.filterByType', () => {
+
+    it('should be a function', () => {
+        expect(typeof dataUtilities.filterByType).toBe('function')
+    });
+
+    it('should return an array with only fire type', () => {
+        const fireType = 'fire';
+        const fireArray = data.pokemon.filter(element => element.type.includes(fireType));
+
+        expect(dataUtilities.filterByType(fireType)).toStrictEqual(fireArray);
+    });
+})
+
+//Test de buscador
+describe('dataUtilities.filterByName', () => {
+
+    it('should be a function', () => {
+        expect(typeof dataUtilities.filterByName).toBe('function')
+    });
+
+    it('should return an array with only fire type', () => {
+        const pokemonName = 'Bulbasaur';
+        const nameArray = data.pokemon.filter(element => element.name.includes(pokemonName));
+
+        expect(dataUtilities.filterByType(nameArray)).toStrictEqual(nameArray);
+    });
 })

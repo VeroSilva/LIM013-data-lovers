@@ -1,7 +1,7 @@
 import data from './data/pokemon/pokemon.js';
 
 //Funcion de filtrado por tipo
-const dataPokemon = {
+export const dataUtilities = {
     listAll: function() {
         return data.pokemon;
     },
@@ -41,4 +41,4 @@ const dataPokemon = {
 
 
 
-export default dataPokemon;
+// export default dataPokemon;
