@@ -34,6 +34,28 @@ export const dataUtilities = {
             }
             return 0;
         });
+    },
+    orderNumericallyDirect: function() {
+        return data.pokemon.sort((a, b) => {
+            if (a.num > b.num) {
+                return 1;
+            }
+            if (a.num < b.num) {
+                return -1;
+            }
+            return 0;
+        });
+    },
+    orderNumericallyReverse: function() {
+        return data.pokemon.sort((a, b) => {
+            if (a.num > b.num) {
+                return -1;
+            }
+            if (a.num < b.num) {
+                return 1;
+            }
+            return 0;
+        });
     }
 }
 

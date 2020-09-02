@@ -44,3 +44,5 @@ describe('dataUtilities.filterByName', () => {
         expect(dataUtilities.filterByType(nameArray)).toStrictEqual(nameArray);
     });
 })
+
+//Test de ordenado alfabetico

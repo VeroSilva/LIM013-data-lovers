@@ -8,6 +8,8 @@ const buttonClosed = document.getElementById("closed");
 const inputSearch = document.getElementById("search");
 const orderAz = document.getElementById("a-z");
 const orderZa = document.getElementById("z-a");
+const orderDirect = document.getElementById("direct");
+const orderReverse = document.getElementById("reverse");
 const eachPokemon = dataUtilities.listAll();
 
 
@@ -32,7 +34,7 @@ function showCards(dataArr) {
     }
 }
 
-//Filtrar por tipo
+//Filtrar por tipo 
 function filterPokemonByType(pokemonType) {
     let pokemonDataByType = dataUtilities.filterByType(pokemonType);
     const templateCards = `
@@ -93,6 +95,17 @@ orderAz.addEventListener("click", function() {
 orderZa.addEventListener("click", function() {
     const orderZa = dataUtilities.orderAlphabeticallyZa();
     showCards(orderZa);
+})
+
+//Ordenar numericamente
+orderDirect.addEventListener("click", function() {
+    const orderDirect = dataUtilities.orderNumericallyDirect();
+    showCards(orderDirect);
+})
+
+orderReverse.addEventListener("click", function() {
+    const orderReverse = dataUtilities.orderNumericallyReverse();
+    showCards(orderReverse);
 })
 
 showCards(eachPokemon);
