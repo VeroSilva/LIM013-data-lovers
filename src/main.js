@@ -10,6 +10,7 @@ const orderAz = document.getElementById("a-z");
 const orderZa = document.getElementById("z-a");
 const eachPokemon = dataFile.listAll();
 
+
 //Mostrar las cartas en la galería
 function showCards(dataArr) {
     let container = document.getElementById("container");
@@ -17,39 +18,44 @@ function showCards(dataArr) {
     for (let k = 0; k < dataArr.length; k++) {
         let txtClass = "";
         let eachTypePoke = dataArr[k].type;
-        for (let l = 0; l < dataArr.length; l++) {
-            txtClass += eachTypePoke[l] + " ";
-        }
-        container.innerHTML += `
+        const templateCards = `
             <div class="card ${txtClass}" id="${dataArr[k].name}">
             <img src="${dataArr[k].img}" class="imageContainer">
             <p class="">${dataArr[k].name}</p>
             </div>
-            `
+            `;
+
+        for (let l = 0; l < dataArr.length; l++) {
+            txtClass += eachTypePoke[l] + " ";
+        }
+        container.innerHTML += templateCards;
     }
 }
 
 //Filtrar por tipo
 function filterPokemonByType(pokemonType) {
     let pokemonDataByType = dataFile.filterByType(pokemonType);
-    document.getElementById("container").innerHTML = "";
-    showCards(pokemonDataByType);
-    document.getElementById("modal-menu").classList.add("hide");
-    document.getElementById("modal-menu").classList.remove("display");
-
-    counterType.innerHTML = `
+    const templateCards = `
     <div class="sticker">
     <img src="images/types/${pokemonType}.png">
     <p class="sticker-type">${pokemonType}: ${pokemonDataByType.length}</p>
     <img src="images/closed-new.png" id="closed-sticker">
     </div>
-    `
+    `;
+
+    document.getElementById("container").innerHTML = "";
+    document.getElementById("modal-menu").classList.add("hide");
+    document.getElementById("modal-menu").classList.remove("display");
+
+    counterType.innerHTML = templateCards;
 
     const buttonRemove = document.getElementById("closed-sticker");
     buttonRemove.addEventListener("click", function() {
         counterType.innerHTML = "";
         showCards(eachPokemon);
     })
+
+    showCards(pokemonDataByType);
 }
 
 //Mostrar el menú hamburguesa
