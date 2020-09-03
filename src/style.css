@@ -1,393 +1,518 @@
-        body {
-        background: url("images/fondo-bienvenida.jpg") no-repeat fixed center;
-        background-size: cover;
-        margin: 0px;
-        position: relative;
-    }
-    
-    body:before {
-        content: "";
-        background-color: #003049;
-        opacity: 0.6;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        position: fixed;
-    }
-    
-    h1,
-    h2,
-    h3,
-    h4 {
-        font-family: 'Anton';
-    }
-    
-    p {
-        font-family: 'Open sans';
-    }
-    /*Funcionalidad para mostrar y ocultar elementos*/
-    
-    .display {
-        display: block;
-    }
-    
-    .hide {
-        display: none;
-    }
-    /*Pantalla completa y pantalla principal centrada*/
-    
-    #general {
-        background: #E5103F;
-        width: 75%;
-        min-height: 100vh;
-        margin: auto;
-        position: relative;
-    }
-    /*Navegación*/
-    
-    nav {
-        width: 100%;
-        margin: 40px auto;
-        display: flex;
-        justify-content: center;
-        height: auto;
-    }
-    
-    nav * {
-        margin: 10px;
-    }
-    
-    .search {
-        width: 500px;
-        border: none;
-        border-radius: 10px;
-        -webkit-box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
-        -moz-box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
-        box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
-    }
-    
-    .buttonOrder {
-        background-color: #fcbf49;
-        color: white;
-        border-radius: 10px;
-        width: 150px;
-        padding: 15px;
-        border: none;
-        font-size: 1.5em;
-        margin: 0px;
-    }
-    
-    .order {
-        -webkit-box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
-        -moz-box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
-        box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
-    }
-    
-    .links a {
-        text-decoration: none;
-        color: white;
-        display: block;
-        padding: 15px;
-        margin: 0;
-    }
-    
-    .links {
-        background-color: #fcbf49;
-        display: none;
-        width: 150px;
-        margin: 0px 0px 0px 30px;
-    }
-    
-    .links a:hover {
-        background-color: #fcb322;
-    }
-    
-    .order:hover .links {
-        display: block;
-        position: absolute;
-    }
-    
-    .random {
-        width: 80px;
-        background-color: #FCBF49;
-        border-radius: 10px;
-        justify-content: center;
-        display: flex;
-        -webkit-box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
-        -moz-box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
-        box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
-    }
-    
-    .random img {
-        width: 40px;
-        margin: 10px;
-    }
-    
-    .title {
-        font-family: Anton;
-        font-size: 50px;
-        color: #003049;
-        text-align: right;
-        margin: 0px;
-        top: 70px;
-        right: 10px;
-        position: absolute;
-    }
-    
-    #headerImage {
-        width: 100%;
-    }
-    
-    .imageContainer {
-        border-radius: 10px;
-        background-color: #F6F2DF;
-        width: 100%;
-    }
-    
-    .card p {
-        display: flex;
-        color: #F6F2DF;
-        font-family: 'Anton', sans-serif;
-        justify-content: center;
-    }
-    
-    .container {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: space-around;
-        margin: auto;
-        width: 80%;
-    }
-    
-    .card {
-        background-color: #003049;
-        border-radius: 10px;
-        margin: 20px;
-        -webkit-box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
-        -moz-box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
-        box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
-        width: 15%;
-        padding: 30px;
-    }
-    
-    .card:hover {
-        cursor: pointer;
-    }
-    /*Estilos del menu hamburguesa*/
-    
-    .modal-menu {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 75%;
-        height: 100vh;
-        background-color: rgba(0, 0, 0, 0.7);
-        z-index: 2;
-        margin: 0 12.5%;
-    }
-    
-    .menu-sidebar {
-        position: absolute;
-        width: 30%;
-        background: #F6F2DF;
-        height: 100vh;
-        overflow: scroll;
-        z-index: 2;
-    }
-    
-    .menu-sidebar .type {
-        width: 100%;
-        margin-top: 15px;
-    }
-    
-    .buttons {
-        margin: auto;
-        width: 70%;
-    }
-    
-    .menu-sidebar>h2 {
-        color: #003049;
-        font-size: 60px;
-        margin: 30px;
-        justify-content: center;
-        display: flex;
-    }
-    
-    #menuHamburguesa {
-        position: absolute;
-        top: 10px;
-        left: 120px;
-    }
-    
-    .type {
-        border: none;
-        padding: 10px;
-        border-radius: 10px;
-        font-size: 20px;
-        color: #ffffff;
-        cursor: pointer;
-    }
-    
-    #closed {
-        width: 40px;
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        cursor: pointer;
-    }
-    /*Colores botones de tipo*/
-    
-    .acero,
-    .steel-sticker {
-        background: #34495E;
-    }
-    
-    .volador,
-    .flying-sticker {
-        background: #1A5276;
-    }
-    
-    .agua,
-    .water-sticker {
-        background: #3498DB;
-    }
-    
-    .hielo,
-    .ice-sticker {
-        background: #76D7C4;
-    }
-    
-    .planta,
-    .grass-sticker {
-        background: #58D68D;
-    }
-    
-    .bicho,
-    .bug-sticker {
-        background: #239B56;
-    }
-    
-    .normalA,
-    .normal-sticker {
-        background: #B7950B;
-    }
-    
-    .roca,
-    .rock-sticker {
-        background: #E67E22;
-    }
-    
-    .electrico,
-    .electric-sticker {
-        background: #F1C40F;
-    }
-    
-    .tierra,
-    .ground-sticker {
-        background: #935116;
-    }
-    
-    .fuego,
-    .fire-sticker {
-        background: #C0392B;
-    }
-    
-    .lucha,
-    .fighting-sticker {
-        background: #922B21;
-    }
-    
-    .hada,
-    .fairy-sticker {
-        background: #F1948A;
-    }
-    
-    .psiquico,
-    .psychic-sticker {
-        background: #C39BD3;
-    }
-    
-    .venenoso,
-    .poison-sticker {
-        background: #7D3C98;
-    }
-    
-    .dragon,
-    .dragon-sticker {
-        background: #4A235A;
-    }
-    
-    .fantasma,
-    .ghost-sticker {
-        background: #424949;
-    }
-    
-    .siniestro,
-    .dark-sticker {
-        background: #000000;
-    }
-    
-    .type img {
-        width: 10%;
-        margin-right: 15px;
-    }
-    /*Etiquetas de tipo*/
-    
-    .sticker-type {
-        font-size: 1.4em;
-        color: #003049;
-        border-radius: 0px 10px 10px 0px;
-        font-weight: bold;
-        margin: 20px;
-    }
-    
-    .sticker {
-        width: 30%;
-        display: flex;
-        justify-content: space-between;
-        background: #f6f2df;
-        border-radius: 0px 10px 10px 0px;
-    }
-    
-    .sticker img {
-        width: 30px;
-        height: 30px;
-        margin: 20px;
-        cursor: pointer;
-    }
-    
-    .counter-type {
-        color: #f6f2df;
-        font-size: 2em;
-        width: 30%;
-        margin: 15px auto;
-        display: flex;
-        justify-content: center;
-    }
-    
-    #counter-type {
-        margin-bottom: 50px;
-        /*Footer*/
-        footer {
-            background-color: #F6F2DF;
-            color: #003049;
-            padding: 20px;
-            font-size: 50px;
-            text-align: center;
-            font-family: "Open Sans", "sans-serif";
-            position: absolute;
-            width: 100%;
-            z-index: 1;
-        }
-        #counter-type {
-            margin-bottom: 50px;
-        }
-        #back:hover {
-            cursor: pointer;
-        }
-        .span1 {
-            color: #003049;
-            font-size: 100px;
-        }
+body {
+    background: url("images/fondo-bienvenida.jpg") no-repeat fixed center;
+    background-size: cover;
+    margin: 0px;
+    position: relative;
+}
+
+body:before {
+    content: "";
+    background-color: #003049;
+    opacity: 0.6;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Anton';
+}
+
+p {
+    font-family: 'Open sans';
+}
+
+
+/*Funcionalidad para mostrar y ocultar elementos*/
+
+.display {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+
+/*Pantalla completa y pantalla principal centrada*/
+
+#general {
+    background: #E5103F;
+    width: 75%;
+    min-height: 100vh;
+    margin: auto;
+    position: relative;
+}
+
+
+/*Aside*/
+
+.boton-versus {
+    width: 110px;
+}
+
+
+/*Navegación*/
+
+nav {
+    width: 100%;
+    margin: 40px auto;
+    display: flex;
+    justify-content: center;
+    height: auto;
+}
+
+nav * {
+    margin: 10px;
+}
+
+.search {
+    width: 500px;
+    border: none;
+    border-radius: 10px;
+    -webkit-box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
+    -moz-box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
+    box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
+}
+
+.buttonOrder {
+    background-color: #fcbf49;
+    color: white;
+    border-radius: 10px;
+    width: 150px;
+    padding: 15px;
+    border: none;
+    font-size: 1.5em;
+    margin: 0px;
+}
+
+.order {
+    -webkit-box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
+    -moz-box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
+    box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
+}
+
+.links a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 15px;
+    margin: 0;
+}
+
+.links {
+    background-color: #fcbf49;
+    display: none;
+    width: 150px;
+    margin: 0px 0px 0px 30px;
+}
+
+.links a:hover {
+    background-color: #fcb322;
+}
+
+.order:hover .links {
+    display: block;
+    position: absolute;
+}
+
+.random {
+    width: 80px;
+    background-color: #FCBF49;
+    border-radius: 10px;
+    justify-content: center;
+    display: flex;
+    -webkit-box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
+    -moz-box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
+    box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
+}
+
+.random img {
+    width: 40px;
+    margin: 10px;
+}
+
+.title {
+    font-family: Anton;
+    font-size: 50px;
+    color: #003049;
+    text-align: right;
+    margin: 0px;
+    top: 70px;
+    right: 10px;
+    position: absolute;
+}
+
+#headerImage {
+    width: 100%;
+}
+
+.imageContainer {
+    border-radius: 10px;
+    background-color: #F6F2DF;
+    width: 100%;
+}
+
+.card p {
+    display: flex;
+    color: #F6F2DF;
+    font-family: 'Anton', sans-serif;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: auto;
+    width: 80%;
+}
+
+.card {
+    background-color: #003049;
+    border-radius: 10px;
+    margin: 20px;
+    -webkit-box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
+    -moz-box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
+    box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
+    width: 15%;
+    padding: 30px;
+}
+
+.card:hover {
+    cursor: pointer;
+}
+
+
+/*Estilos del menu hamburguesa*/
+
+.modal-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 75%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2;
+    margin: 0 12.5%;
+}
+
+.menu-sidebar {
+    position: absolute;
+    width: 30%;
+    background: #F6F2DF;
+    height: 100vh;
+    overflow: scroll;
+    z-index: 2;
+}
+
+.menu-sidebar .type {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.buttons {
+    margin: auto;
+    width: 70%;
+}
+
+.menu-sidebar>h2 {
+    color: #003049;
+    font-size: 60px;
+    margin: 30px;
+    justify-content: center;
+    display: flex;
+}
+
+#menuHamburguesa {
+    position: absolute;
+    top: 10px;
+    left: 120px;
+}
+
+.type {
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+#closed {
+    width: 40px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+}
+
+
+/*Colores botones de tipo*/
+
+.acero,
+.steel-sticker {
+    background: #34495E;
+}
+
+.volador,
+.flying-sticker {
+    background: #1A5276;
+}
+
+.agua,
+.water-sticker {
+    background: #3498DB;
+}
+
+.hielo,
+.ice-sticker {
+    background: #76D7C4;
+}
+
+.planta,
+.grass-sticker {
+    background: #58D68D;
+}
+
+.bicho,
+.bug-sticker {
+    background: #239B56;
+}
+
+.normalA,
+.normal-sticker {
+    background: #B7950B;
+}
+
+.roca,
+.rock-sticker {
+    background: #E67E22;
+}
+
+.electrico,
+.electric-sticker {
+    background: #F1C40F;
+}
+
+.tierra,
+.ground-sticker {
+    background: #935116;
+}
+
+.fuego,
+.fire-sticker {
+    background: #C0392B;
+}
+
+.lucha,
+.fighting-sticker {
+    background: #922B21;
+}
+
+.hada,
+.fairy-sticker {
+    background: #F1948A;
+}
+
+.psiquico,
+.psychic-sticker {
+    background: #C39BD3;
+}
+
+.venenoso,
+.poison-sticker {
+    background: #7D3C98;
+}
+
+.dragon,
+.dragon-sticker {
+    background: #4A235A;
+}
+
+.fantasma,
+.ghost-sticker {
+    background: #424949;
+}
+
+.siniestro,
+.dark-sticker {
+    background: #000000;
+}
+
+.type img {
+    width: 10%;
+    margin-right: 15px;
+}
+
+
+/*Etiquetas de tipo*/
+
+.sticker-type {
+    font-size: 1.4em;
+    color: #003049;
+    border-radius: 0px 10px 10px 0px;
+    font-weight: bold;
+    margin: 20px;
+}
+
+.sticker {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    background: #f6f2df;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.sticker img {
+    width: 30px;
+    height: 30px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.counter-type {
+    color: #f6f2df;
+    font-size: 2em;
+    width: 30%;
+    margin: 15px auto;
+    display: flex;
+    justify-content: center;
+}
+
+#counter-type {
+    margin-bottom: 50px;
+}
+
+
+/*Modal de Calculadora*/
+
+.buttons-aside {
+    position: fixed;
+    bottom: 1%;
+    right: 1%;
+}
+
+.outside-modal {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.versusModal {
+    background: url("images/fondo-versus.jpg");
+    width: 50%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    position: absolute;
+    background-position: top;
+}
+
+.versusModal::before {
+    content: "";
+    background-color: #003049;
+    opacity: 0.6;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    position: absolute;
+}
+
+#closed-versus {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    cursor: pointer;
+}
+
+.title-versus {
+    z-index: 2;
+    color: #f6f2df;
+    font-size: 50px;
+    width: 80%;
+    margin: 50px auto 0 auto;
+    text-align: center;
+}
+
+.players {
+    margin: 50px;
+    z-index: 2;
+}
+
+.players>input {
+    margin: 0px 15px;
+    height: 45px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
+}
+
+#compare {
+    background-color: #fcbf49;
+    color: white;
+    border-radius: 10px;
+    width: 150px;
+    padding: 15px;
+    border: none;
+    font-size: 1.5em;
+    margin: 0px;
+    box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
+    z-index: 2;
+}
+
+.compare-result {
+    color: #f6f2df;
+    z-index: 2;
+    font-size: 30px;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    background: rgb(2, 0, 36);
+    background: radial-gradient(circle, rgba(2, 0, 36, 1) 0%, rgba(0, 48, 73, 1) 49%, rgba(0, 66, 102, 0.46260511040353647) 100%);
+}
+
+
+/*Footer*/
+
+footer {
+    background-color: #F6F2DF;
+    color: #003049;
+    padding: 20px;
+    font-size: 50px;
+    text-align: center;
+    font-family: "Open Sans", "sans-serif";
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+#counter-type {
+    margin-bottom: 50px;
+}
+
+#back:hover {
+    cursor: pointer;
+}
+
+.span1 {
+    color: #003049;
+    font-size: 100px;
+}

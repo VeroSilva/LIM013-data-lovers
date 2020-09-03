@@ -10,6 +10,7 @@ const orderAz = document.getElementById("a-z");
 const orderZa = document.getElementById("z-a");
 const orderDirect = document.getElementById("direct");
 const orderReverse = document.getElementById("reverse");
+const versusButton = document.getElementById("boton-versus")
 const eachPokemon = dataUtilities.listAll();
 
 
@@ -34,7 +35,7 @@ function showCards(dataArr) {
     }
 }
 
-//Filtrar por tipo 
+//Filtrar por tipo
 function filterPokemonByType(pokemonType) {
     let pokemonDataByType = dataUtilities.filterByType(pokemonType);
     const templateCards = `
@@ -43,7 +44,7 @@ function filterPokemonByType(pokemonType) {
     <p class="sticker-type">${pokemonType}: ${pokemonDataByType.length}</p>
     <img src="images/closed-new.png" id="closed-sticker">
     </div>
-    `;
+    `
 
     document.getElementById("container").innerHTML = "";
     document.getElementById("modal-menu").classList.add("hide");
@@ -104,8 +105,49 @@ orderDirect.addEventListener("click", function() {
 })
 
 orderReverse.addEventListener("click", function() {
-    const orderReverse = dataUtilities.orderNumericallyReverse();
+    const orderReverse = dataUtilities.orderNumericallyDirect();
     showCards(orderReverse);
+})
+
+//Versus
+versusButton.addEventListener("click", function() {
+    document.getElementById("versus-modal-container").classList.add("display");
+    document.getElementById("versus-modal-container").classList.remove("hide");
+    const templateVersus = `
+    <div class="outside-modal">
+    <div id="versusModal" class="versusModal">
+        <img src="images/closed-white.png" id="closed-versus">
+        <h2 class="title-versus">¡Pon a prueba el tipo de tu pokemón!</h2>
+        <div class="players">
+            <input type="text" name="Player 1" class="player1" placeholder="Tu jugador" id="my-player">
+            <input type="text" name="Player 2" class="player2" placeholder="Contrincante" id="other-player">
+        </div>
+        <button id="compare">Comparar</button>  
+    </div>
+    </div>
+    `
+    const versusModalContainer = document.getElementById("versus-modal-container");
+    versusModalContainer.innerHTML = templateVersus;
+    const versusModal = document.getElementById("versusModal");
+
+    const compare = document.getElementById("compare");
+    compare.addEventListener("click", function() {
+        let myPlayer = document.getElementById("my-player").value;
+        let otherPlayer = document.getElementById("other-player").value;
+        let compareResult = dataUtilities.comparePokemon(myPlayer, otherPlayer);
+        versusModal.innerHTML += `<p class="compare-result"> ${compareResult} </p>`;
+
+        const buttonClosed = document.getElementById('closed-versus');
+        buttonClosed.addEventListener("click", function() {
+            document.getElementById("versus-modal-container").classList.add("hide");
+        })
+    })
+
+    const buttonClosed = document.getElementById('closed-versus');
+    buttonClosed.addEventListener("click", function() {
+        document.getElementById("versus-modal-container").classList.add("hide");
+    })
+
 })
 
 showCards(eachPokemon);
