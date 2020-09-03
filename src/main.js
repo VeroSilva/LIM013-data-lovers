@@ -9,9 +9,9 @@ const inputSearch = document.getElementById("search");
 const back = document.getElementById("back");
 const container = document.getElementById("container");
 const eachPokemon = dataFile.listAll();
+const pokeCard = document.getElementById("pokeCard");
 //Mostrar las cartas en la galería
 function showCards(dataArr) {
-    let container = document.getElementById("container");
     container.innerHTML = "";
     for (let k = 0; k < dataArr.length; k++) {
         let txtClass = "";
@@ -25,6 +25,7 @@ function showCards(dataArr) {
             <p class="">${dataArr[k].name}</p>
             </div>
             `
+        
     }
 }
 
@@ -73,11 +74,41 @@ for (let j = 0; j < typeButton.length; j++) {
         let pokemonType = event.target.getAttribute("data-type");
         filterPokemonByType(pokemonType)
     })
-}
+};
 
 showCards(eachPokemon);
 
-
+//Función mostrar modal personalizado
+ function showPokeCards(dataArr){
+    for (let k = 0; k < dataArr.length; k++) {
+    document.getElementById(dataArr[k].name).addEventListener("click", function(){
+        document.getElementById("pokeCard").style.display = "block";
+        pokeCard.innerHTML= "";
+        
+            pokeCard.innerHTML=`
+                <div class="headCard ">
+                <img src="images/closed-new.png" id="close">
+                    <img src="${dataArr[k].img}" class="pokeCardImageContainer" alt="">
+                    <div class="headCard2">
+                        <p class="styleText">Nombre: ${dataArr[k].name} </p>
+                        <p class="styleText">N°: ${dataArr[k].num} </p>
+                    </div>
+                </div>
+                <div class="centerCard">
+                    <p class="styleText">Peso: ${dataArr[k].size.weight}</p>
+                    <p class="styleText">Altura: ${dataArr[k].size.height}</p>
+                    <p class="styleText">Tipo: ${dataArr[k].type}</p>
+                </div>
+                <p class="styleText">Descripción: ${dataArr[k].about} </p>
+                <p class="styleText">Evoluciones: ${dataArr[k].evolution}</p>
+                `
+                document.getElementById("close").addEventListener("click", function(){
+                    pokeCard.style.display = "none";
+                })
+        }) 
+    };
+};
+showPokeCards(eachPokemon);
 
 
 //Paginacion 
