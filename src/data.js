@@ -92,6 +92,7 @@ export const dataUtilities = {
         }
 
     },
+    }
 }
 
 

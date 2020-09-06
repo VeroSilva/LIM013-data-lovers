@@ -13,7 +13,6 @@ const orderReverse = document.getElementById("reverse");
 const versusButton = document.getElementById("boton-versus")
 const eachPokemon = dataUtilities.listAll();
 
-
 //Mostrar las cartas en la galería
 function showCards(dataArr) {
     let container = document.getElementById("container");
@@ -27,7 +26,7 @@ function showCards(dataArr) {
             <p class="">${dataArr[k].name}</p>
             </div>
             `;
-
+      
         for (let l = 0; l < dataArr.length; l++) {
             txtClass += eachTypePoke[l] + " ";
         }
@@ -45,11 +44,10 @@ function filterPokemonByType(pokemonType) {
     <img src="images/closed-new.png" id="closed-sticker">
     </div>
     `
-
     document.getElementById("container").innerHTML = "";
     document.getElementById("modal-menu").classList.add("hide");
     document.getElementById("modal-menu").classList.remove("display");
-
+    
     counterType.innerHTML = templateCards;
 
     const buttonRemove = document.getElementById("closed-sticker");
@@ -65,7 +63,7 @@ function filterPokemonByType(pokemonType) {
 buttonMenuTypes.addEventListener("click", function() {
     document.getElementById("modal-menu").classList.add("display");
     document.getElementById("modal-menu").classList.remove("hide");
-})
+});
 
 //Cerrar menu hamburguesa
 buttonClosed.addEventListener("click", function() {
