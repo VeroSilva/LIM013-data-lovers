@@ -27,7 +27,7 @@
                 <button class="type fuego" data-type="fire"><img src="images/types/fire.png">Fuego</button>
                 <button class="type lucha" data-type="fighting"><img src="images/types/fighting.png">Lucha</button>
                 <button class="type hada" data-type="fairy"><img src="images/types/fairy.png">Hada</button>
-                <button class="type psiquico" data-type="psychic"><img src="images/types/phychic.png">Psiquico</button>
+                <button class="type psiquico" data-type="psychic"><img src="images/types/psychic.png">Psiquico</button>
                 <button class="type venenoso" data-type="poison"><img src="images/types/poison.png">Venenoso</button>
                 <button class="type dragon" data-type="dragon"><img src="images/types/dragon.png">Dragón</button>
                 <button class="type fantasma" data-type="ghost"><img src="images/types/ghost.png">Fantasma</button>
@@ -46,9 +46,11 @@
             <div class="order">
                 <button class="buttonOrder">Ordenar</button>
                 <div class="links">
-                    <a href="#">Fuerza</a>
-                    <a href="#">A-Z</a>
-                    <a href="#">Z-A</a>
+                    <a href="#" id="stronger">Fuerza</a>
+                    <a href="#" id="a-z">A-Z</a>
+                    <a href="#" id="z-a">Z-A</a>
+                    <a href="#" id="direct">001-251</a>
+                    <a href="#" id="reverse">251-001</a>
                 </div>
             </div>
 
@@ -56,14 +58,17 @@
                 <img src="images/boton-aleatorio.png">
             </div>
         </nav>
+        <aside class="buttons-aside">
+            <img src="images/boton-versus.png" class="boton-versus" id="boton-versus">
+        </aside>
+        <div id="versus-modal-container"></div>
         <div id="counter-type"></div>
         <span class="iconify hide span1" id="back" data-inline="false" data-icon="ion:caret-back" ></span>
         <div id="container" class="container">
         </div>
     </div>
     <footer>
-        <span class="iconify span1" data-inline="false" data-icon="simple-icons:pokemon" ></span>
-        © 2020 Illari y Veronica Develop S.A
+        <span class="iconify span1" data-inline="false" data-icon="simple-icons:pokemon" ></span><p>© 2020 Illari y Veronica Develop S.A</p>
     </footer>
     <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
     <script src="main.js" type="module"></script>
