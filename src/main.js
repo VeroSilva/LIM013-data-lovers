@@ -9,7 +9,7 @@ const inputSearch = document.getElementById("search");
 const back = document.getElementById("back");
 const container = document.getElementById("container");
 const eachPokemon = dataFile.listAll();
-const pokeCard = document.getElementById("pokeCard");
+const pokeCardContainer = document.getElementById("pokeCardContainer");
 //Mostrar las cartas en la galería
 function showCards(dataArr) {
     container.innerHTML = "";
@@ -82,10 +82,11 @@ showCards(eachPokemon);
  function showPokeCards(dataArr){
     for (let k = 0; k < dataArr.length; k++) {
     document.getElementById(dataArr[k].name).addEventListener("click", function(){
-        document.getElementById("pokeCard").style.display = "block";
-        pokeCard.innerHTML= "";
+        document.getElementById("pokeCardContainer").style.display = "block";
         
-            pokeCard.innerHTML=`
+        pokeCardContainer.innerHTML= "";
+            pokeCardContainer.innerHTML=`
+            <div class="pokeCard" id="pokeCard">
                 <div class="headCard ">
                 <img src="images/closed-new.png" id="close">
                     <img src="${dataArr[k].img}" class="pokeCardImageContainer" alt="">
@@ -101,9 +102,11 @@ showCards(eachPokemon);
                 </div>
                 <p class="styleText">Descripción: ${dataArr[k].about} </p>
                 <p class="styleText">Evoluciones: ${dataArr[k].evolution}</p>
+            </div>
                 `
+                document.getElementById("pokeCard").style.display = "block";
                 document.getElementById("close").addEventListener("click", function(){
-                    pokeCard.style.display = "none";
+                    pokeCardContainer.style.display = "none";
                 })
         }) 
     };

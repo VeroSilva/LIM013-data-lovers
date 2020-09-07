@@ -40,29 +40,34 @@
             <a href="#" id="menu-button"><img id="menuHamburguesa" src="images/boton-menu.png" width="100px" height="100px"></a>
             <h1 class="title">Pokedex 2.0</h1>
         </header>
-        <nav>
-            <input type="search" name="busqueda" id="search" class="search" placeholder="Búsqueda">
-            <div class="order">
-                <button class="buttonOrder">Ordenar</button>
-                <div class="links">
-                    <a href="#">Fuerza</a>
-                    <a href="#">A-Z</a>
-                    <a href="#">Z-A</a>
+        <main>
+            <nav>
+                <input type="search" name="busqueda" id="search" class="search" placeholder="Búsqueda">
+                <div class="order">
+                    <button class="buttonOrder">Ordenar</button>
+                    <div class="links">
+                        <a href="#">Fuerza</a>
+                        <a href="#">A-Z</a>
+                        <a href="#">Z-A</a>
+                    </div>
                 </div>
-            </div>
 
-            <div class="random">
-                <img src="images/boton-aleatorio.png">
+                <div class="random">
+                    <img src="images/boton-aleatorio.png">
+                </div>
+            </nav>
+            <div class="modal" id="modal">
+                <p>Bienvenid@  a   Pokedex  2.0 </p>
+                <span class="iconify span1" data-inline="false" data-icon="simple-icons:pokemon"></span>
             </div>
-        </nav>
-        <div id="counter-type"></div>
-        <div id="pokeCard" class="pokeCard hide"></div>
-        <span class="iconify hide span1" id="back" data-inline="false" data-icon="ion:caret-back" ></span>
-        <div id="container" class="container">
+            <div id="counter-type"></div>
+            <div class="pokeCardContainer" id="pokeCardContainer"></div>
+            <div id="container" class="container">
+            </div>
         </div>
-    </div>
+    </main>
     <footer>
-        <span class="iconify span1" data-inline="false" data-icon="simple-icons:pokemon" ></span>
+        <span class="iconify span1" data-inline="false" data-icon="simple-icons:pokemon"></span>
         © 2020 Illari y Veronica Develop S.A
     </footer>
     <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
