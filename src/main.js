@@ -29,7 +29,7 @@ function showCards(dataArr) {
             <p class="">${dataArr[k].name}</p>
             </div>
             `;
-      
+
         for (let l = 0; l < dataArr.length; l++) {
             txtClass += eachTypePoke[l] + " ";
         }
@@ -50,7 +50,7 @@ function filterPokemonByType(pokemonType) {
     document.getElementById("container").innerHTML = "";
     document.getElementById("modal-menu").classList.add("hide");
     document.getElementById("modal-menu").classList.remove("display");
-    
+
     counterType.innerHTML = templateCards;
 
     const buttonRemove = document.getElementById("closed-sticker");
@@ -154,13 +154,13 @@ versusButton.addEventListener("click", function() {
 showCards(eachPokemon);
 
 //Función mostrar modal personalizado
- function showPokeCards(dataArr){
+function showPokeCards(dataArr) {
     for (let k = 0; k < dataArr.length; k++) {
-    document.getElementById(dataArr[k].name).addEventListener("click", function(){
-        document.getElementById("pokeCardContainer").style.display = "block";
-        
-        pokeCardContainer.innerHTML= "";
-            pokeCardContainer.innerHTML=`
+        document.getElementById(dataArr[k].name).addEventListener("click", function() {
+            document.getElementById("pokeCardContainer").style.display = "block";
+
+            pokeCardContainer.innerHTML = "";
+            pokeCardContainer.innerHTML = `
             <div class="pokeCard" id="pokeCard">
                 <div class="headCard ">
                 <img src="images/closed-new.png" id="close">
@@ -179,22 +179,24 @@ showCards(eachPokemon);
                 <p class="styleText">Evoluciones: ${dataArr[k].evolution}</p>
             </div>
                 `
-                document.getElementById("pokeCard").style.display = "block";
-                document.getElementById("close").addEventListener("click", function(){
-                    pokeCardContainer.style.display = "none";
-                })
-        }) 
-    };
-};
+            document.getElementById("pokeCard").style.display = "block";
+            document.getElementById("close").addEventListener("click", function() {
+                pokeCardContainer.style.display = "none";
+            })
+        })
+    }
+}
+
 showPokeCards(eachPokemon);
 //Cerrando modal de inicio
-closeStartModal.addEventListener("click", function(){
-    document.getElementById("startModal").style.display = "none";
-})
-//Abrir cerrar modal de ayuda
-helpButton.addEventListener("click", function(){
+closeStartModal.addEventListener("click", function() {
+        document.getElementById("startModal").style.display = "none";
+    })
+    //Abrir cerrar modal de ayuda
+helpButton.addEventListener("click", function() {
     document.getElementById("modalHelp").style.display = "block"
 })
+
 
 //Paginacion 
 // const first = document.querySelector(".first");
