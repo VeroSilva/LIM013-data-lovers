@@ -14,7 +14,6 @@ const versusButton = document.getElementById("boton-versus")
 const eachPokemon = dataUtilities.listAll();
 const back = document.getElementById("back");
 const container = document.getElementById("container");
-const eachPokemon = dataFile.listAll();
 const pokeCardContainer = document.getElementById("pokeCardContainer");
 //Mostrar las cartas en la galería
 function showCards(dataArr) {
