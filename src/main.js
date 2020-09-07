@@ -15,6 +15,8 @@ const eachPokemon = dataUtilities.listAll();
 const back = document.getElementById("back");
 const container = document.getElementById("container");
 const pokeCardContainer = document.getElementById("pokeCardContainer");
+const closeStartModal = document.getElementById("closeStartModal");
+const helpButton = document.getElementById("helpButton");
 //Mostrar las cartas en la galería
 function showCards(dataArr) {
     container.innerHTML = "";
@@ -185,7 +187,14 @@ showCards(eachPokemon);
     };
 };
 showPokeCards(eachPokemon);
-
+//Cerrando modal de inicio
+closeStartModal.addEventListener("click", function(){
+    document.getElementById("startModal").style.display = "none";
+})
+//Abrir cerrar modal de ayuda
+helpButton.addEventListener("click", function(){
+    document.getElementById("modalHelp").style.display = "block"
+})
 
 //Paginacion 
 // const first = document.querySelector(".first");

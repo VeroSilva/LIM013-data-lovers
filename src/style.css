@@ -411,6 +411,17 @@ footer{
     position: fixed;
     bottom: 1%;
     right: 1%;
+    display: flex;
+    flex-direction: column;
+}
+.buttons-aside>img{
+    width: 120px;
+    height: 120px;
+    padding: 10px;
+    filter: drop-shadow();
+}
+.buttons-aside>img:hover{
+    cursor: pointer;
 }
 
 .outside-modal {
@@ -535,7 +546,9 @@ footer {
     color: #003049; 
     font-size: 100px;
 }
+
 /* Modal por pokeCard*/
+
 .pokeCardContainer{
     display: flex;
     display: none;
@@ -592,7 +605,9 @@ footer {
     width: 75px;
     height: 75px;
 }
+
 /* Modal de inicio */
+
 .startModal{
     display: flex;
     position: fixed;
@@ -624,9 +639,29 @@ footer {
     color: white;
     text-align: center;
 }
-.startModalContent>img{
+#closeStartModal{
     width: 50px;
     height: 50px;
     padding: 10px;
     position: relative;
+}
+#closeStartModal:hover{
+    cursor: pointer;
+}
+
+/*Modal de Ayuda*/
+.modalHelp{
+    position: absolute;
+    display: none;
+
+}
+.modalHelpContent{
+    background-image: url("images/fondo-ayuda.jpg");
+    text-align: center;
+    background-size: 400px 600px;
+    width: 400px;
+    height: 600px;
+}
+.modalHelpContent>p{
+    color: white;
 }
