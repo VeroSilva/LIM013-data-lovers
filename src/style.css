@@ -512,7 +512,7 @@ footer {
     font-size: 50px;
     text-align: center;
     font-family: "Open Sans", "sans-serif";
-    position: absolute;
+    position: relative;
     width: 100%;
     z-index: 1;
 }
@@ -535,14 +535,16 @@ footer {
     color: #003049; 
     font-size: 100px;
 }
+/* Modal por pokeCard*/
 .pokeCardContainer{
     display: flex;
     display: none;
     position: fixed;
     flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.7);
-    top: 2%;
-    left: 30%;
+    justify-content: center;
+    align-items: center;
+    padding-left: 30%;
+    padding-top: 2%;
 }
 .pokeCard{
     display: flex;
@@ -551,8 +553,6 @@ footer {
     background-size: 500px 600px;
     width: 500px;
     height: 600px;
-    
-    
 }
 .pokeCardImageContainer{
     width: 100px;
@@ -585,7 +585,48 @@ footer {
 }
 .centerCard{
     display: flex;
-    
     flex-direction: row;
     justify-content: center ;
+}
+.closedStartModal{
+    width: 75px;
+    height: 75px;
+}
+/* Modal de inicio */
+.startModal{
+    display: flex;
+    position: fixed;
+}
+.startModalContent{
+    background-image: url("images/fondo-bienvenida.jpg");
+    background-size: 320px 450px;
+    border-radius: 10px;
+    width: 320px;
+    height: 450px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+.startModalContent:before {
+	content:'';
+	position: absolute;
+    top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0,0,0,0.4);
+}
+.startModalContent>p{
+    position: relative;
+    font-family: 'Anton';
+    font-size: 50px;
+    color: white;
+    text-align: center;
+}
+.startModalContent>img{
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    position: relative;
 }
