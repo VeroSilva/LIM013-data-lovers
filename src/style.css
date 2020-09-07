@@ -397,7 +397,7 @@ footer{
     text-align: center;
     font-family: "Open Sans", "sans-serif";
     position: absolute ;
-    width: 100%;
+    width: 50%;
     z-index: 1;
  
 }
@@ -534,4 +534,58 @@ footer {
 .span1 {
     color: #003049; 
     font-size: 100px;
+}
+.pokeCardContainer{
+    display: flex;
+    display: none;
+    position: fixed;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.7);
+    top: 2%;
+    left: 30%;
+}
+.pokeCard{
+    display: flex;
+    flex-wrap: wrap;
+    background: url("images/pantalla-id.png");
+    background-size: 500px 600px;
+    width: 500px;
+    height: 600px;
+    
+    
+}
+.pokeCardImageContainer{
+    width: 100px;
+    height: 100px;
+}
+#close{
+    width: 50px;
+    height: 50px;
+}
+.styleText{
+    font-family: 'Anton';
+    font-size: 15px;
+    color: #F77F00;
+    margin-left: 50px;
+    margin-right: 50px;
+    flex: 1 1 auto;
+    padding: auto;
+    text-align: center;
+}
+.headCard{
+    display: flex;
+    justify-content: space-evenly ;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 50px;
+}
+.headCard2{
+    display: flex;
+    flex-direction: column;
+}
+.centerCard{
+    display: flex;
+    
+    flex-direction: row;
+    justify-content: center ;
 }
