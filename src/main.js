@@ -223,6 +223,8 @@ document.getElementById("closeHelpModal").addEventListener("click", function(){
     document.getElementById("modalHelp").style.display = "none";
 })
 
+//Paginación modal de ayuda
+
 //Paginacion 
 // const first = document.querySelector(".first");
 // const previous = document.querySelector(".previous");
