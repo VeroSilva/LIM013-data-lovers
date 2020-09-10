@@ -688,20 +688,12 @@ footer {
 }
 
 @media (max-width: 600px) {
+    /*Header*/
     #headerImage1 {
         display: none;
     }
     #headerImage2 {
         display: block;
-    }
-    #general {
-        width: 100%;
-    }
-    .container {
-        width: 100%;
-    }
-    .card {
-        width: 50%;
     }
     #menuHamburguesa {
         position: absolute;
@@ -710,6 +702,14 @@ footer {
         top: 10px;
         left: 20px;
     }
+    /*Pantalla completa*/
+    #general {
+        width: 100%;
+    }
+    .container {
+        width: 100%;
+    }
+    /*Navegación*/
     nav {
         display: flex;
         justify-content: center;
@@ -732,6 +732,10 @@ footer {
         width: 80px;
         height: 80px;
     }
+    .links {
+        margin: 310px 0px 0px 50px;
+    }
+    /*Menu de tipos*/
     .modal-menu {
         width: 100%;
         margin: 0;
@@ -739,6 +743,7 @@ footer {
     .menu-sidebar {
         width: 100%;
     }
+    /*Calculadora*/
     .versusModal {
         width: 100%;
     }
@@ -750,15 +755,13 @@ footer {
         justify-content: center;
         flex-wrap: wrap;
     }
+    /*Cards*/
     .card p {
         font-size: 1.5em;
         margin: 20px 0px 0px 0px;
     }
-    footer {
-        font-size: 20px;
-    }
-    .span1 {
-        font-size: 150px;
+    .card {
+        width: 50%;
     }
     .sticker {
         width: 100%;
@@ -767,7 +770,11 @@ footer {
     #counter-type {
         margin-bottom: 0px;
     }
-    .links {
-        margin: 310px 0px 0px 50px;
+    /*Footer*/
+    footer {
+        font-size: 20px;
+    }
+    .span1 {
+        font-size: 150px;
     }
 }
