@@ -47,7 +47,8 @@
             <div class="order">
                 <button class="buttonOrder">Ordenar</button>
                 <div class="links">
-                    <a href="#" id="stronger">Fuerza</a>
+                    <a href="#" id="stronger">Mayor CP</a>
+                    <a href="#" id="weakest">Menor CP</a>
                     <a href="#" id="a-z">A-Z</a>
                     <a href="#" id="z-a">Z-A</a>
                     <a href="#" id="direct">001-251</a>
@@ -55,7 +56,7 @@
                 </div>
             </div>
 
-            <div class="random">
+            <div class="random" id="random">
                 <img src="images/boton-aleatorio.png">
             </div>
         </nav>
@@ -69,17 +70,15 @@
             <div class="modalHelpContent" id="modalHelpContent">
                 <img src="images/closed-white.png" id="closeHelpModal">
                 <h2>AYUDA</h2>
-                <p>-Busca un pokemon: mediante el buscador puedes escribir el pokemon que desees, recuerda que solo tenemos a las regiones de Kanto y Johto. Puedes darle click a la tarjeta y ahí tendrás los detalles de cada pokemon. -Filtra: Puedes filtrar
-                    por tipo en el menú hamburguesa de la derecha, para quitar el tipo puedes eliminar la etiqueta. -Ordena: Tu decides como quieres que ser ordenen por fuerza, albeticamente o numericamente, de manera ascendente o descendente. -Compara:
-                    Cuentas con nuestra calculadora de batalla la cual te da una aproximación de que pokemon ganaría en una batalla real teniendo en cuenta el tipo y ataques respectivos. -Diviertete: Contamos con un botón aleatorio para que puedas descubrir
-                    a otros pokemones!
+                <p>Busca un pokemon: mediante el buscador puedes escribir el pokemon que desees, recuerda que solo tenemos a las regiones de Kanto y Johto. Puedes darle click a la tarjeta y ahí tendrás los detalles de cada pokemon. <br> Filtra: Puedes filtrar
+                    por tipo en el menú hamburguesa de la derecha, para quitar el tipo puedes eliminar la etiqueta. <br> Ordena: Tu decides como quieres que ser ordenen por fuerza, albeticamente o numericamente, de manera ascendente o descendente. <br>                    Compara: Cuentas con nuestra calculadora de batalla la cual te da una aproximación de que pokemon ganaría en una batalla real teniendo en cuenta el tipo y ataques respectivos. <br> Diviertete: Contamos con un botón aleatorio para que
+                    puedas descubrir a otros pokemones!
                 </p>
             </div>
         </div>
         <div id="counter-type"></div>
         <div class="pokeCardContainer outside-modal" id="pokeCardContainer"></div>
         <div id="container" class="container"></div>
-        </nav>
         <aside class="buttons-aside">
             <img src="images/boton-ayuda.png" id="helpButton" alt="">
             <img src="images/boton-versus.png" class="boton-versus" id="boton-versus">
@@ -87,15 +86,14 @@
         <div id="versus-modal-container"></div>
         <div id="counter-type"></div>
         <span class="iconify hide span1" id="back" data-inline="false" data-icon="ion:caret-back"></span>
-        <div id="container" class="container">
-        </div>
-        </main>
-        <footer>
-            <span class="iconify span1" data-inline="false" data-icon="simple-icons:pokemon"></span>
-            <p>© 2020 Illari y Veronica Develop S.A</p>
-        </footer>
-        <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
-        <script src="main.js" type="module"></script>
+        <div id="container" class="container"></div>
+    </div>
+    <footer>
+        <span class="iconify span1" data-inline="false" data-icon="simple-icons:pokemon"></span>
+        <p>© 2020 Illari y Veronica Develop S.A</p>
+    </footer>
+    <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+    <script src="main.js" type="module"></script>
 </body>
 
 </html>

@@ -10,7 +10,10 @@ const orderAz = document.getElementById("a-z");
 const orderZa = document.getElementById("z-a");
 const orderDirect = document.getElementById("direct");
 const orderReverse = document.getElementById("reverse");
-const versusButton = document.getElementById("boton-versus")
+const orderStrongest = document.getElementById("stronger");
+const orderWeakest = document.getElementById("weakest");
+const versusButton = document.getElementById("boton-versus");
+const randomizePokemon = document.getElementById("random");
 const eachPokemon = dataUtilities.listAll();
 // const back = document.getElementById("back");
 const container = document.getElementById("container");
@@ -79,6 +82,7 @@ buttonClosed.addEventListener("click", function() {
 inputSearch.addEventListener("keyup", function(e) {
     const pokemonDataByName = dataUtilities.filterByName(e.target.value);
     showCards(pokemonDataByName);
+
 })
 
 //Capturar el tipo de pokemon
@@ -93,22 +97,43 @@ for (let j = 0; j < typeButton.length; j++) {
 orderAz.addEventListener("click", function() {
     const orderAz = dataUtilities.orderAlphabeticallyAz();
     showCards(orderAz);
+
 })
 
 orderZa.addEventListener("click", function() {
     const orderZa = dataUtilities.orderAlphabeticallyZa();
     showCards(orderZa);
+
 })
 
 //Ordenar numericamente
 orderDirect.addEventListener("click", function() {
     const orderDirect = dataUtilities.orderNumericallyDirect();
     showCards(orderDirect);
+
 })
 
 orderReverse.addEventListener("click", function() {
-    const orderReverse = dataUtilities.orderNumericallyDirect();
+    const orderReverse = dataUtilities.orderNumericallyReverse();
     showCards(orderReverse);
+})
+
+//Ordenar por fuerza
+orderStrongest.addEventListener("click", function() {
+    const orderStrongest = dataUtilities.orderStrong();
+    showCards(orderStrongest);
+
+})
+orderWeakest.addEventListener("click", function() {
+    const orderWeakest = dataUtilities.orderWeak();
+    showCards(orderWeakest);
+
+})
+
+//Random Pokemon
+randomizePokemon.addEventListener("click", function() {
+    const selectPokemonRandomize = dataUtilities.randomPokemon(eachPokemon);
+    showCards(selectPokemonRandomize);
 })
 
 //Versus
@@ -154,45 +179,62 @@ versusButton.addEventListener("click", function() {
 
 //Función mostrar modal personalizado
 function showPokeCards(dataArr) {
-    for (let k = 0; k < dataArr.length; k++) {
-        document.getElementById(dataArr[k].name).addEventListener("click", function() {
-            document.getElementById("pokeCardContainer").style.display = "block";
+    // for (let k = 0; k < dataArr.length; k++) {
+    //     document.getElementById(dataArr[k].name).addEventListener("click", function() {
+    //                 document.getElementById("pokeCardContainer").style.display = "block";
 
-            pokeCardContainer.innerHTML = "";
-            pokeCardContainer.innerHTML = `
-            <div class="pokeCard" id="pokeCard">
-                <div class="headCard ">
-                <img src="images/closed-new.png" id="close">
-                    <img src="${dataArr[k].img}" class="pokeCardImageContainer" alt="">
-                    <div class="headCard2">
-                        <p class="styleText">Nombre: ${dataArr[k].name} </p>
-                        <p class="styleText">N°: ${dataArr[k].num} </p>
-                    </div>
-                </div>
-                <div class="centerCard">
-                    <p class="styleText">Peso: ${dataArr[k].size.weight}</p>
-                    <p class="styleText">Altura: ${dataArr[k].size.height}</p>
-                    <p class="styleText">Tipo: ${dataArr[k].type}</p>
-                </div>
-                <p class="styleText">Descripción: ${dataArr[k].about} </p>
-                <p class="styleText">Evoluciones: ${dataArr[k].evolution}</p>
-            </div>
-                `
-            document.getElementById("pokeCard").style.display = "block";
-            document.getElementById("close").addEventListener("click", function() {
-                pokeCardContainer.style.display = "none";
-            })
-        })
-    }
+    //                 pokeCardContainer.innerHTML = "";
+    //                 pokeCardContainer.innerHTML = `
+    //     document.getElementById(dataArr[k].name).addEventListener("click", function(){
+    //     document.getElementById("pokeCardContainer").style.display = "block";
+    //    /*  let templatePrevEvolution = '';
+    //     // verificar si existe la propiedad prev-evolution
+    //     dataArr[k].evolution['prev-evolution'].forEach((elemento) => {
+    //         console.log(elemento.name)
+    //         templatePrevEvolution += ` <p> $ {elemento.name} </p>`
+    //                     // verificar si existe la propiedad prev-evolution
+
+    //                 // Si tiene le agregamos el template */
+    //                 //})
+    //                 pokeCardContainer.innerHTML = `
+    //         <div class="pokeCard" id="pokeCard">
+    //         <img src="images/closed-new.png" id="close">
+    //             <div class="headCard ">
+    //                 <img src="${dataArr[k].img}" class="imgSize" alt="">
+    //                 <div class="headCard2">
+    //                     <p>Nombre: ${dataArr[k].name} </p>
+    //                     <p>N°: ${dataArr[k].num} </p>
+    //                 </div>
+    //             </div>
+    //             <div class="centerCard">
+    //                 <p>Peso: ${dataArr[k].size.weight}</p>
+    //                 <p>Altura: ${dataArr[k].size.height}</p>
+    //                 <p>Tipo: ${dataArr[k].type}</p>
+    //             </div>
+    //             <p id="description" translate="yes" >${dataArr[k].about} </p>
+    //             <p id="evolution">Evoluciones</p>
+    //         </div>
+    //             document.getElementById("pokeCard").style.display = "block";
+    //             document.getElementById("close").addEventListener("click", function(){
+    //                 pokeCardContainer.style.display = "none";
+    //             })
+    //     }) 
+    // }
 }
+
+showPokeCards(eachPokemon);
 
 //Cerrando modal de inicio
 closeStartModal.addEventListener("click", function() {
-        document.getElementById("startModal").style.display = "none";
-    })
-    //Abrir cerrar modal de ayuda
+    document.getElementById("startModal").style.display = "none";
+})
+
+//Abrir cerrar modal de ayuda
 helpButton.addEventListener("click", function() {
-    document.getElementById("modalHelp").style.display = "block"
+    document.getElementById("modalHelp").style.display = "block";
+})
+document.getElementById("closeHelpModal").addEventListener("click", function() {
+    document.getElementById("modalHelp").style.display = "none";
 })
 
 showCards(eachPokemon);

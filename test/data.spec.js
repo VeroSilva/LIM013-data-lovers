@@ -92,7 +92,6 @@ describe('dataUtilities.orderNumericallyDirect', () => {
 })
 
 //Test de calculadora
-
 describe('dataUtilities.comparePokemon', () => {
 
     it('should compare two pokemons and return who is the winner', () => {
@@ -101,3 +100,19 @@ describe('dataUtilities.comparePokemon', () => {
         expect(dataUtilities.comparePokemon(player1, player2)).toBe("¡Ganaste!")
     })
 })
+
+//Test de ordenado por fuerza
+describe('dataUtilities.orderStrong', () => {
+    it('should be a function', () => {
+        expect(typeof dataUtilities.orderStrong).toBe('function')
+    });
+    it('should return the strongest pokemon', () => {})
+})
+
+//Pokemon random
+// describe('dataUtilities.randomPokemon', () => {
+//     it('should throw any pokemon', () => {
+//         const pokemons = data.pokemon;
+//         expect(dataUtilities.randomPokemon(pokemons)).toContain(pokemons);
+//     })
+// })

@@ -43,7 +43,6 @@ export const dataUtilities = {
             if (a.num < b.num) {
                 return -1;
             }
-            return 0;
         });
     },
     orderNumericallyReverse: function() {
@@ -54,8 +53,17 @@ export const dataUtilities = {
             if (a.num < b.num) {
                 return 1;
             }
-            return 0;
         });
+    },
+    orderStrong: function() {
+        return data.pokemon.sort((a, b) => {
+            return b.stats['max-cp'] - a.stats['max-cp'];
+        })
+    },
+    orderWeak: function() {
+        return data.pokemon.sort((a, b) => {
+            return a.stats['max-cp'] - b.stats['max-cp'];
+        })
     },
     comparePokemon: function(myPlayer, otherPlayer) {
         const fullArrayNamePlayer1 = data.pokemon.filter(element => element.name.includes(myPlayer));
@@ -92,7 +100,10 @@ export const dataUtilities = {
         }
 
     },
+    randomPokemon: function(pokemons) {
+        return [pokemons[Math.floor(Math.random() * pokemons.length)]];
     }
+}
 
 
 
