@@ -12,7 +12,7 @@ const orderDirect = document.getElementById("direct");
 const orderReverse = document.getElementById("reverse");
 const versusButton = document.getElementById("boton-versus")
 const eachPokemon = dataUtilities.listAll();
-const back = document.getElementById("back");
+// const back = document.getElementById("back");
 const container = document.getElementById("container");
 const pokeCardContainer = document.getElementById("pokeCardContainer");
 const closeStartModal = document.getElementById("closeStartModal");
@@ -86,7 +86,7 @@ for (let j = 0; j < typeButton.length; j++) {
         let pokemonType = event.target.getAttribute("data-type");
         filterPokemonByType(pokemonType)
     })
-};
+}
 
 //Ordenar alfabeticamente
 orderAz.addEventListener("click", function() {
@@ -187,7 +187,16 @@ function showPokeCards(dataArr) {
     }
 }
 
+if (screen.width <= 600) {
+    console.log(screen.width)
+    document.getElementById("headerImage").src = 'images/cabecera-mobile.png';
+} else if (screen.width > 600) {
+    document.getElementById("headerImage").src = 'images/cabecera-desktop.png';
+}
+
+
 showPokeCards(eachPokemon);
+
 //Cerrando modal de inicio
 closeStartModal.addEventListener("click", function() {
         document.getElementById("startModal").style.display = "none";
@@ -196,6 +205,7 @@ closeStartModal.addEventListener("click", function() {
 helpButton.addEventListener("click", function() {
     document.getElementById("modalHelp").style.display = "block"
 })
+
 
 
 //Paginacion 

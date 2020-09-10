@@ -1,9 +1,9 @@
-import { dataUtilities } from '../src/data.js';
+jest.mock('../src/data/pokemon/pokemon.js');
 import data from '../src/data/pokemon/pokemon.js';
+import { dataUtilities } from '../src/data.js';
 
 //Test de listado
 describe('dataUtilities.listAll', () => {
-
     it('should be a function', () => {
         expect(typeof dataUtilities.listAll).toBe('function')
     });
@@ -37,7 +37,7 @@ describe('dataUtilities.filterByName', () => {
         expect(typeof dataUtilities.filterByName).toBe('function')
     });
 
-    it('should return an array with only fire type', () => {
+    it('should return Bulbasaurs card', () => {
         const pokemonName = 'Bulbasaur';
         const nameArray = data.pokemon.filter(element => element.name.includes(pokemonName));
 
@@ -46,3 +46,16 @@ describe('dataUtilities.filterByName', () => {
 })
 
 //Test de ordenado alfabetico
+describe('dataUtilities.orderAlphabeticallyAz', () => {
+
+    it('should be a function', () => {
+        expect(typeof dataUtilities.orderAlphabeticallyAz).toBe('function')
+    });
+
+    it('should return an array ordered from A to Z', () => {
+        const pokemonList = ["bulbasaur", "venusaur", "ivysaur", "charmander"];
+        const pokemonListOrdered = ["bulbasaur", "charmander", "ivysaur", "venusaur"];
+
+        expect(dataUtilities.orderAlphabeticallyAz(pokemonList)).toStrictEqual(pokemonListOrdered);
+    });
+})
