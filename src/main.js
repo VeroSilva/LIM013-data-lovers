@@ -79,6 +79,7 @@ buttonClosed.addEventListener("click", function() {
 inputSearch.addEventListener("keyup", function(e) {
     const pokemonDataByName = dataUtilities.filterByName(e.target.value);
     showCards(pokemonDataByName);
+    
 })
 
 //Capturar el tipo de pokemon
@@ -93,31 +94,37 @@ for (let j = 0; j < typeButton.length; j++) {
 orderAz.addEventListener("click", function() {
     const orderAz = dataUtilities.orderAlphabeticallyAz();
     showCards(orderAz);
+  
 })
 
 orderZa.addEventListener("click", function() {
     const orderZa = dataUtilities.orderAlphabeticallyZa();
     showCards(orderZa);
+
 })
 
 //Ordenar numericamente
 orderDirect.addEventListener("click", function() {
     const orderDirect = dataUtilities.orderNumericallyDirect();
     showCards(orderDirect);
+
 })
 
 orderReverse.addEventListener("click", function() {
     const orderReverse = dataUtilities.orderNumericallyDirect();
     showCards(orderReverse);
+
 })
 //Ordenar por fuerza
 orderStrongest.addEventListener("click", function(){
     const orderStrongest = dataUtilities.orderStrong();
     showCards(orderStrongest);
+
 })
 orderWeakest.addEventListener("click", function(){
     const orderWeakest = dataUtilities.orderWeak();
     showCards(orderWeakest);
+
 })
 
 //Versus
