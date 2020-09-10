@@ -53,9 +53,51 @@ describe('dataUtilities.orderAlphabeticallyAz', () => {
     });
 
     it('should return an array ordered from A to Z', () => {
-        const pokemonList = ["bulbasaur", "venusaur", "ivysaur", "charmander"];
-        const pokemonListOrdered = ["bulbasaur", "charmander", "ivysaur", "venusaur"];
+        const pokemonList = data.pokemon;
+        const pokemonListOrdered = data.pokemon.sort((a, b) => {
+            if (a.name > b.name) {
+                return 1;
+            }
+            if (a.name < b.name) {
+                return -1;
+            }
+            return 0;
+        })
 
         expect(dataUtilities.orderAlphabeticallyAz(pokemonList)).toStrictEqual(pokemonListOrdered);
     });
+})
+
+//Test de ordenado alfabetico
+describe('dataUtilities.orderNumericallyDirect', () => {
+
+    it('should be a function', () => {
+        expect(typeof dataUtilities.orderNumericallyDirect).toBe('function')
+    });
+
+    it('should return an array ordered from 001 to 251', () => {
+        const pokemonList = data.pokemon;
+        const pokemonListOrdered = data.pokemon.sort((a, b) => {
+            if (a.num > b.num) {
+                return 1;
+            }
+            if (a.num < b.num) {
+                return -1;
+            }
+            return 0;
+        })
+
+        expect(dataUtilities.orderNumericallyDirect(pokemonList)).toStrictEqual(pokemonListOrdered);
+    });
+})
+
+//Test de calculadora
+
+describe('dataUtilities.comparePokemon', () => {
+
+    it('should compare two pokemons and return who is the winner', () => {
+        const player1 = "bulbasaur";
+        const player2 = "wartortle";
+        expect(dataUtilities.comparePokemon(player1, player2)).toBe("¡Ganaste!")
+    })
 })

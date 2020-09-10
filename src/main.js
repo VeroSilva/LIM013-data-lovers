@@ -17,6 +17,7 @@ const container = document.getElementById("container");
 const pokeCardContainer = document.getElementById("pokeCardContainer");
 const closeStartModal = document.getElementById("closeStartModal");
 const helpButton = document.getElementById("helpButton");
+
 //Mostrar las cartas en la galería
 function showCards(dataArr) {
     container.innerHTML = "";
@@ -151,8 +152,6 @@ versusButton.addEventListener("click", function() {
 
 })
 
-showCards(eachPokemon);
-
 //Función mostrar modal personalizado
 function showPokeCards(dataArr) {
     for (let k = 0; k < dataArr.length; k++) {
@@ -187,16 +186,6 @@ function showPokeCards(dataArr) {
     }
 }
 
-if (screen.width <= 600) {
-    console.log(screen.width)
-    document.getElementById("headerImage").src = 'images/cabecera-mobile.png';
-} else if (screen.width > 600) {
-    document.getElementById("headerImage").src = 'images/cabecera-desktop.png';
-}
-
-
-showPokeCards(eachPokemon);
-
 //Cerrando modal de inicio
 closeStartModal.addEventListener("click", function() {
         document.getElementById("startModal").style.display = "none";
@@ -206,7 +195,8 @@ helpButton.addEventListener("click", function() {
     document.getElementById("modalHelp").style.display = "block"
 })
 
-
+showCards(eachPokemon);
+showPokeCards(eachPokemon);
 
 //Paginacion 
 // const first = document.querySelector(".first");

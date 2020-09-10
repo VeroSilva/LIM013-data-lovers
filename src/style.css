@@ -51,6 +51,22 @@ a {
 }
 
 
+/*Header*/
+
+#headerImage1 {
+    display: block;
+}
+
+#headerImage2 {
+    display: none;
+}
+
+#headerImage1,
+#headerImage2 {
+    width: 100%;
+}
+
+
 /*Aside*/
 
 .boton-versus {
@@ -147,10 +163,6 @@ nav * {
     top: 70px;
     right: 10px;
     position: absolute;
-}
-
-#headerImage {
-    width: 100%;
 }
 
 .imageContainer {
@@ -676,6 +688,12 @@ footer {
 }
 
 @media (max-width: 600px) {
+    #headerImage1 {
+        display: none;
+    }
+    #headerImage2 {
+        display: block;
+    }
     #general {
         width: 100%;
     }
@@ -687,10 +705,10 @@ footer {
     }
     #menuHamburguesa {
         position: absolute;
-        width: 80px;
-        height: 80px;
-        top: 15px;
-        left: 15px;
+        width: 75px;
+        height: 75px;
+        top: 10px;
+        left: 20px;
     }
     nav {
         display: flex;
@@ -741,5 +759,15 @@ footer {
     }
     .span1 {
         font-size: 150px;
+    }
+    .sticker {
+        width: 100%;
+        margin: 30px 0px;
+    }
+    #counter-type {
+        margin-bottom: 0px;
+    }
+    .links {
+        margin: 310px 0px 0px 50px;
     }
 }
