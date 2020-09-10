@@ -57,6 +57,16 @@ export const dataUtilities = {
             return 0;
         });
     },
+    orderStrong: function(){
+        return data.pokemon.sort((a,b) => {
+                return b.stats['max-cp']-a.stats['max-cp'];
+        })
+    },
+    orderWeak: function(){
+        return data.pokemon.sort((a,b) => {
+            return a.stats['max-cp']-b.stats['max-cp'];
+    })  
+    },
     comparePokemon: function(myPlayer, otherPlayer) {
         const fullArrayNamePlayer1 = data.pokemon.filter(element => element.name.includes(myPlayer));
         const fullArrayNamePlayer2 = data.pokemon.filter(element => element.name.includes(otherPlayer));

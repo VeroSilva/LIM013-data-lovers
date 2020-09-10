@@ -10,9 +10,10 @@ const orderAz = document.getElementById("a-z");
 const orderZa = document.getElementById("z-a");
 const orderDirect = document.getElementById("direct");
 const orderReverse = document.getElementById("reverse");
+const orderStrongest = document.getElementById("stronger");
+const orderWeakest = document.getElementById("weakest");
 const versusButton = document.getElementById("boton-versus")
 const eachPokemon = dataUtilities.listAll();
-const back = document.getElementById("back");
 const container = document.getElementById("container");
 const pokeCardContainer = document.getElementById("pokeCardContainer");
 const closeStartModal = document.getElementById("closeStartModal");
@@ -86,7 +87,7 @@ for (let j = 0; j < typeButton.length; j++) {
         let pokemonType = event.target.getAttribute("data-type");
         filterPokemonByType(pokemonType)
     })
-};
+}
 
 //Ordenar alfabeticamente
 orderAz.addEventListener("click", function() {
@@ -108,6 +109,15 @@ orderDirect.addEventListener("click", function() {
 orderReverse.addEventListener("click", function() {
     const orderReverse = dataUtilities.orderNumericallyDirect();
     showCards(orderReverse);
+})
+//Ordenar por fuerza
+orderStrongest.addEventListener("click", function(){
+    const orderStrongest = dataUtilities.orderStrong();
+    showCards(orderStrongest);
+})
+orderWeakest.addEventListener("click", function(){
+    const orderWeakest = dataUtilities.orderWeak();
+    showCards(orderWeakest);
 })
 
 //Versus
@@ -158,25 +168,32 @@ showCards(eachPokemon);
     for (let k = 0; k < dataArr.length; k++) {
     document.getElementById(dataArr[k].name).addEventListener("click", function(){
         document.getElementById("pokeCardContainer").style.display = "block";
-        
-        pokeCardContainer.innerHTML= "";
+       /*  let templatePrevEvolution = '';
+        // verificar si existe la propiedad prev-evolution
+        dataArr[k].evolution['prev-evolution'].forEach((elemento) => {
+            console.log(elemento.name)
+            templatePrevEvolution += `<p>${elemento.name}</p>`
+             // verificar si existe la propiedad prev-evolution
+
+               // Si tiene le agregamos el template */
+        //})
             pokeCardContainer.innerHTML=`
             <div class="pokeCard" id="pokeCard">
+            <img src="images/closed-new.png" id="close">
                 <div class="headCard ">
-                <img src="images/closed-new.png" id="close">
-                    <img src="${dataArr[k].img}" class="pokeCardImageContainer" alt="">
+                    <img src="${dataArr[k].img}" class="imgSize" alt="">
                     <div class="headCard2">
-                        <p class="styleText">Nombre: ${dataArr[k].name} </p>
-                        <p class="styleText">N°: ${dataArr[k].num} </p>
+                        <p>Nombre: ${dataArr[k].name} </p>
+                        <p>N°: ${dataArr[k].num} </p>
                     </div>
                 </div>
                 <div class="centerCard">
-                    <p class="styleText">Peso: ${dataArr[k].size.weight}</p>
-                    <p class="styleText">Altura: ${dataArr[k].size.height}</p>
-                    <p class="styleText">Tipo: ${dataArr[k].type}</p>
+                    <p>Peso: ${dataArr[k].size.weight}</p>
+                    <p>Altura: ${dataArr[k].size.height}</p>
+                    <p>Tipo: ${dataArr[k].type}</p>
                 </div>
-                <p class="styleText">Descripción: ${dataArr[k].about} </p>
-                <p class="styleText">Evoluciones: ${dataArr[k].evolution}</p>
+                <p id="description" translate="yes" >${dataArr[k].about} </p>
+                <p id="evolution">Evoluciones</p>
             </div>
                 `
                 document.getElementById("pokeCard").style.display = "block";
@@ -184,8 +201,8 @@ showCards(eachPokemon);
                     pokeCardContainer.style.display = "none";
                 })
         }) 
-    };
-};
+    }
+}
 showPokeCards(eachPokemon);
 //Cerrando modal de inicio
 closeStartModal.addEventListener("click", function(){
@@ -193,7 +210,10 @@ closeStartModal.addEventListener("click", function(){
 })
 //Abrir cerrar modal de ayuda
 helpButton.addEventListener("click", function(){
-    document.getElementById("modalHelp").style.display = "block"
+    document.getElementById("modalHelp").style.display = "block";
+})
+document.getElementById("closeHelpModal").addEventListener("click", function(){
+    document.getElementById("modalHelp").style.display = "none";
 })
 
 //Paginacion 

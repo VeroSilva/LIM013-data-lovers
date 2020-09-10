@@ -45,4 +45,11 @@ describe('dataUtilities.filterByName', () => {
     });
 })
 
-//Test de ordenado alfabetico
+//Test de ordenado por fuerza
+describe('dataUtilities.orderStrong', () => {
+    it('should be a function', () => {
+        expect(typeof dataUtilities.orderStrong).toBe('function')
+    });
+    it('should return the strongest pokemon', () => {
+    })
+})

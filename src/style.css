@@ -183,6 +183,7 @@ nav * {
     box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
     width: 15%;
     padding: 30px;
+    text-transform: capitalize;
 }
 .card:hover{
     cursor: pointer;
@@ -577,8 +578,7 @@ footer {
 }
 .styleText{
     font-family: 'Anton';
-    font-size: 15px;
-    color: #F77F00;
+    font-size: 18px;
     margin-left: 50px;
     margin-right: 50px;
     flex: 1 1 auto;
@@ -590,7 +590,13 @@ footer {
     justify-content: space-evenly ;
     flex-direction: row;
     align-items: center;
-    padding-top: 50px;
+}
+.headCard2>p{
+    color: #003049;
+    font-size: 25px;
+    font-family: 'Anton';
+    margin: 2px;
+    text-transform: capitalize;
 }
 .headCard2{
     display: flex;
@@ -600,6 +606,36 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: center ;
+    color: #F77F00;
+    font-size: 18px;
+}
+.imgSize{
+    width:150px;
+    height: 150px;
+}
+#close{
+    padding: 10px;
+}
+#close:hover{
+    cursor: pointer;
+}
+#description{
+    font-size: 18px;
+    color: #003049;
+    text-align: center;
+    padding:  0px 50px;
+}
+#evolution{
+    color: #003049;
+    text-align: center;
+    font-family: "Anton";
+    color: #F77F00;
+    font-size: 18px;
+
+}
+.centerCard>p{
+    padding: 5px;
+    font-family: "Anton";
 }
 .closedStartModal{
     width: 75px;
@@ -644,6 +680,7 @@ footer {
     height: 50px;
     padding: 10px;
     position: relative;
+    margin-left: 0;
 }
 #closeStartModal:hover{
     cursor: pointer;
@@ -651,9 +688,18 @@ footer {
 
 /*Modal de Ayuda*/
 .modalHelp{
-    position: absolute;
+    position: fixed;
     display: none;
 
+}
+.modalHelpContent:before {
+	content:'';
+	position: absolute;
+    top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0,0,0,0.4);
 }
 .modalHelpContent{
     background-image: url("images/fondo-ayuda.jpg");
@@ -661,7 +707,25 @@ footer {
     background-size: 400px 600px;
     width: 400px;
     height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    border-radius: 10px;
 }
 .modalHelpContent>p{
     color: white;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: left;
+}
+.modalHelpContent> h2{
+    position: relative;
+    color: white;
+    font-size: 50px;
+    margin-bottom: 5px;
+}
+#closeHelpModal{
+    width: 50px;
+    height: 50px;
+    position: relative;
 }
