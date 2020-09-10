@@ -92,14 +92,14 @@ describe('dataUtilities.orderNumericallyDirect', () => {
 })
 
 //Test de calculadora
-describe('dataUtilities.comparePokemon', () => {
+// describe('dataUtilities.comparePokemon', () => {
 
-    it('should compare two pokemons and return who is the winner', () => {
-        const player1 = "bulbasaur";
-        const player2 = "wartortle";
-        expect(dataUtilities.comparePokemon(player1, player2)).toBe("¡Ganaste!")
-    })
-})
+//     it('should compare two pokemons and return who is the winner', () => {
+//         const player1 = "bulbasaur";
+//         const player2 = "wartortle";
+//         expect(dataUtilities.comparePokemon(player1, player2)).toBe("¡Ganaste!")
+//     })
+// })
 
 //Test de ordenado por fuerza
 describe('dataUtilities.orderStrong', () => {
