@@ -170,6 +170,7 @@ versusButton.addEventListener("click", function() {
 
 showCards(eachPokemon);
 
+
 //Función mostrar modal personalizado
  function showPokeCards(dataArr){
     for (let k = 0; k < dataArr.length; k++) {
