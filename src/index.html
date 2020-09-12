@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div class="modal-menu hide" id="modal-menu">
         <div class="menu-sidebar" id="menu-sidebar">
@@ -36,7 +37,8 @@
     </div>
     <div id="general">
         <header>
-            <img id="headerImage" src="images/cabecera-desktop.png" alt="">
+            <img id="headerImage1" src="images/cabecera-desktop.png" alt="">
+            <img id="headerImage2" src="images/cabecera-mobile.png" alt="">
             <a href="#" id="menu-button"><img id="menuHamburguesa" src="images/boton-menu.png" width="100px" height="100px"></a>
             <h1 class="title" id="title"><img src="images/titulo.png" alt=""></h1>
         </header>
@@ -54,47 +56,44 @@
                 </div>
             </div>
 
-                <div class="random">
-                    <img src="images/boton-aleatorio.png">
-                </div>
+            <div class="random" id="random">
+                <img src="images/boton-aleatorio.png">
+            </div>
         </nav>
-            <div class="startModal outside-modal" id="startModal">
-                <div class="startModalContent" id="startModalContent">
-                    <img src="images/closed-white.png" id="closeStartModal">
-                    <p>Bienvenid@  a   Pokedex  2.0 </p>
-                </div>
+        <div class="startModal outside-modal" id="startModal">
+            <div class="startModalContent" id="startModalContent">
+                <img src="images/closed-white.png" id="closeStartModal">
+                <p>Bienvenid@ a Pokedex 2.0 </p>
             </div>
-            <div class="modalHelp outside-modal" id="modalHelp">
-                <div class="modalHelpContent" id="modalHelpContent">
-                    <img src="images/closed-white.png" id="closeHelpModal">
-                    <h2>AYUDA</h2>
-                    <p>Busca un pokemon: mediante el buscador puedes escribir el pokemon que desees, recuerda que solo
-                        tenemos a las regiones de Kanto y Johto. Puedes darle click a la tarjeta y ahí tendrás los detalles
-                        de cada pokemon. <br>
-                       Filtra: Puedes filtrar por tipo en el menú hamburguesa de la derecha, para quitar el tipo puedes
-                        eliminar la etiqueta. <br>
-                        Ordena: Tu decides como quieres que ser ordenen por fuerza, albeticamente o numericamente, de
-                        manera ascendente o descendente. <br>
-                        Compara:  Cuentas con nuestra calculadora de batalla la cual te da una aproximación de que pokemon
-                        ganaría en una batalla real teniendo en cuenta el tipo y ataques respectivos. <br>
-                        Diviertete: Contamos con un botón aleatorio para que puedas descubrir a otros pokemones!
-                    </p>
-                </div>
+        </div>
+        <div class="modalHelp outside-modal" id="modalHelp">
+            <div class="modalHelpContent" id="modalHelpContent">
+                <img src="images/closed-white.png" id="closeHelpModal">
+                <h2>AYUDA</h2>
+                <p>Busca un pokemon: mediante el buscador puedes escribir el pokemon que desees, recuerda que solo tenemos a las regiones de Kanto y Johto. Puedes darle click a la tarjeta y ahí tendrás los detalles de cada pokemon. <br> Filtra: Puedes filtrar
+                    por tipo en el menú hamburguesa de la derecha, para quitar el tipo puedes eliminar la etiqueta. <br> Ordena: Tu decides como quieres que ser ordenen por fuerza, albeticamente o numericamente, de manera ascendente o descendente. <br>                    Compara: Cuentas con nuestra calculadora de batalla la cual te da una aproximación de que pokemon ganaría en una batalla real teniendo en cuenta el tipo y ataques respectivos. <br> Diviertete: Contamos con un botón aleatorio para que
+                    puedas descubrir a otros pokemones!
+                </p>
             </div>
-            <div id="counter-type"></div>
-            <div class="pokeCardContainer outside-modal" id="pokeCardContainer"></div>
-            <div id="container" class="container"></div>
+        </div>
+        <div id="counter-type"></div>
+        <div class="pokeCardContainer outside-modal" id="pokeCardContainer"></div>
+        <div id="container" class="container"></div>
         <aside class="buttons-aside">
             <img src="images/boton-ayuda.png" id="helpButton" alt="">
             <img src="images/boton-versus.png" class="boton-versus" id="boton-versus">
         </aside>
         <div id="versus-modal-container"></div>
-        <span class="iconify hide span1" id="back" data-inline="false" data-icon="ion:caret-back" ></span>
+        <div id="counter-type"></div>
+        <span class="iconify hide span1" id="back" data-inline="false" data-icon="ion:caret-back"></span>
+        <div id="container" class="container"></div>
     </div>
     <footer>
-        <span class="iconify span1" data-inline="false" data-icon="simple-icons:pokemon" ></span><p>© 2020 Illari y Veronica Develop S.A</p>
+        <span class="iconify span1" data-inline="false" data-icon="simple-icons:pokemon"></span>
+        <p>© 2020 Illari y Veronica Develop S.A</p>
     </footer>
     <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
     <script src="main.js" type="module"></script>
 </body>
+
 </html>
