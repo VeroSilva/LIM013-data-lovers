@@ -179,47 +179,34 @@ versusButton.addEventListener("click", function() {
 
 //Función mostrar modal personalizado
 function showPokeCards(dataArr) {
-    // for (let k = 0; k < dataArr.length; k++) {
-    //     document.getElementById(dataArr[k].name).addEventListener("click", function() {
-    //                 document.getElementById("pokeCardContainer").style.display = "block";
-
-    //                 pokeCardContainer.innerHTML = "";
-    //                 pokeCardContainer.innerHTML = `
-    //     document.getElementById(dataArr[k].name).addEventListener("click", function(){
-    //     document.getElementById("pokeCardContainer").style.display = "block";
-    //    /*  let templatePrevEvolution = '';
-    //     // verificar si existe la propiedad prev-evolution
-    //     dataArr[k].evolution['prev-evolution'].forEach((elemento) => {
-    //         console.log(elemento.name)
-    //         templatePrevEvolution += ` <p> $ {elemento.name} </p>`
-    //                     // verificar si existe la propiedad prev-evolution
-
-    //                 // Si tiene le agregamos el template */
-    //                 //})
-    //                 pokeCardContainer.innerHTML = `
-    //         <div class="pokeCard" id="pokeCard">
-    //         <img src="images/closed-new.png" id="close">
-    //             <div class="headCard ">
-    //                 <img src="${dataArr[k].img}" class="imgSize" alt="">
-    //                 <div class="headCard2">
-    //                     <p>Nombre: ${dataArr[k].name} </p>
-    //                     <p>N°: ${dataArr[k].num} </p>
-    //                 </div>
-    //             </div>
-    //             <div class="centerCard">
-    //                 <p>Peso: ${dataArr[k].size.weight}</p>
-    //                 <p>Altura: ${dataArr[k].size.height}</p>
-    //                 <p>Tipo: ${dataArr[k].type}</p>
-    //             </div>
-    //             <p id="description" translate="yes" >${dataArr[k].about} </p>
-    //             <p id="evolution">Evoluciones</p>
-    //         </div>
-    //             document.getElementById("pokeCard").style.display = "block";
-    //             document.getElementById("close").addEventListener("click", function(){
-    //                 pokeCardContainer.style.display = "none";
-    //             })
-    //     }) 
-    // }
+    for (let k = 0; k < dataArr.length; k++){
+    document.getElementById(dataArr[k].name).addEventListener("click", function() {
+                document.getElementById("pokeCardContainer").style.display = "block";
+                 pokeCardContainer.innerHTML = "";
+                 pokeCardContainer.innerHTML = `
+             <div class="pokeCard" id="pokeCard">
+             <img src="images/closed-new.png" id="close">
+                 <div class="headCard ">
+                     <img src="${dataArr[k].img}" class="imgSize" alt="">
+                     <div class="headCard2">
+                         <p>Nombre: ${dataArr[k].name} </p>
+                         <p>N°: ${dataArr[k].num} </p>
+                     </div>
+                 </div>
+                 <div class="centerCard">
+                     <p>Peso: ${dataArr[k].size.weight}</p>
+                     <p>Altura: ${dataArr[k].size.height}</p>
+                     <p>Tipo: ${dataArr[k].type}</p>
+                 </div>
+                 <p id="description" translate="yes" >${dataArr[k].about} </p>
+                 <p id="evolution">Evoluciones</p>
+             </div>`
+                 document.getElementById("pokeCard").style.display = "block";
+                 document.getElementById("close").addEventListener("click", function(){
+                     pokeCardContainer.style.display = "none";
+                 })
+         }) 
+     } 
 }
 
 showPokeCards(eachPokemon);
