@@ -102,6 +102,9 @@ export const dataUtilities = {
         }
 
     },
+    randomPokemon: function(pokemons) {
+        return [pokemons[Math.floor(Math.random() * pokemons.length)]];
+    }
     }
 
 
