@@ -18,6 +18,7 @@ const container = document.getElementById("container");
 const pokeCardContainer = document.getElementById("pokeCardContainer");
 const closeStartModal = document.getElementById("closeStartModal");
 const helpButton = document.getElementById("helpButton");
+const eachPokemon = dataUtilities.listAll();
 //Mostrar las cartas en la galería
 function showCards(dataArr) {
     container.innerHTML = "";
