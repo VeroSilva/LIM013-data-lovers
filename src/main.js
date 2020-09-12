@@ -126,6 +126,11 @@ orderWeakest.addEventListener("click", function(){
     showCards(orderWeakest);
 
 })
+//Random Pokemon
+randomizePokemon.addEventListener("click", function() {
+    const selectPokemonRandomize = dataUtilities.randomPokemon(eachPokemon);
+    showCards(selectPokemonRandomize);
+})
 
 //Versus
 versusButton.addEventListener("click", function() {
