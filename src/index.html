@@ -9,32 +9,6 @@
 </head>
 
 <body>
-    <div class="modal-menu hide" id="modal-menu">
-        <div class="menu-sidebar" id="menu-sidebar">
-            <img src="images/closed-new.png" id="closed">
-            <h2>TIPOS</h2>
-            <div class="buttons">
-                <button class="type acero" data-type="steel"><img src="images/types/steel.png">Acero</button>
-                <button class="type volador" data-type="flying"><img src="images/types/flying.png">Volador</button>
-                <button class="type agua" data-type="water"><img src="images/types/water.png">Agua</button>
-                <button class="type hielo" data-type="ice"><img src="images/types/ice.png">Hielo</button>
-                <button class="type planta" data-type="grass"><img src="images/types/grass.png">Planta</button>
-                <button class="type bicho" data-type="bug"><img src="images/types/bug.png">Bicho</button>
-                <button class="type normalA" data-type="normal"><img src="images/types/normal.png">Normal</button>
-                <button class="type roca" data-type="rock"><img src="images/types/rock.png">Roca</button>
-                <button class="type electrico" data-type="electric"><img src="images/types/electric.png">Eléctrico</button>
-                <button class="type tierra" data-type="ground"><img src="images/types/ground.png">Tierra</button>
-                <button class="type fuego" data-type="fire"><img src="images/types/fire.png">Fuego</button>
-                <button class="type lucha" data-type="fighting"><img src="images/types/fighting.png">Lucha</button>
-                <button class="type hada" data-type="fairy"><img src="images/types/fairy.png">Hada</button>
-                <button class="type psiquico" data-type="psychic"><img src="images/types/psychic.png">Psiquico</button>
-                <button class="type venenoso" data-type="poison"><img src="images/types/poison.png">Venenoso</button>
-                <button class="type dragon" data-type="dragon"><img src="images/types/dragon.png">Dragón</button>
-                <button class="type fantasma" data-type="ghost"><img src="images/types/ghost.png">Fantasma</button>
-                <button class="type siniestro" data-type="dark"><img src="images/types/dark.png">Siniestro</button>
-            </div>
-        </div>
-    </div>
     <div id="general">
         <header>
             <img id="headerImage1" src="images/cabecera-desktop.png" alt="">
@@ -42,6 +16,32 @@
             <a href="#" id="menu-button"><img id="menuHamburguesa" src="images/boton-menu.png" width="100px" height="100px"></a>
             <h1 class="title" id="title"><img src="images/titulo.png" alt=""></h1>
         </header>
+        <div class="modal-menu hide" id="modal-menu">
+            <menu class="menu-sidebar" id="menu-sidebar">
+                <img src="images/closed-new.png" id="closed">
+                <h2>TIPOS</h2>
+                <div class="buttons">
+                    <button class="type acero" data-type="steel"><img src="images/types/steel.png">Acero</button>
+                    <button class="type volador" data-type="flying"><img src="images/types/flying.png">Volador</button>
+                    <button class="type agua" data-type="water"><img src="images/types/water.png">Agua</button>
+                    <button class="type hielo" data-type="ice"><img src="images/types/ice.png">Hielo</button>
+                    <button class="type planta" data-type="grass"><img src="images/types/grass.png">Planta</button>
+                    <button class="type bicho" data-type="bug"><img src="images/types/bug.png">Bicho</button>
+                    <button class="type normalA" data-type="normal"><img src="images/types/normal.png">Normal</button>
+                    <button class="type roca" data-type="rock"><img src="images/types/rock.png">Roca</button>
+                    <button class="type electrico" data-type="electric"><img src="images/types/electric.png">Eléctrico</button>
+                    <button class="type tierra" data-type="ground"><img src="images/types/ground.png">Tierra</button>
+                    <button class="type fuego" data-type="fire"><img src="images/types/fire.png">Fuego</button>
+                    <button class="type lucha" data-type="fighting"><img src="images/types/fighting.png">Lucha</button>
+                    <button class="type hada" data-type="fairy"><img src="images/types/fairy.png">Hada</button>
+                    <button class="type psiquico" data-type="psychic"><img src="images/types/psychic.png">Psiquico</button>
+                    <button class="type venenoso" data-type="poison"><img src="images/types/poison.png">Venenoso</button>
+                    <button class="type dragon" data-type="dragon"><img src="images/types/dragon.png">Dragón</button>
+                    <button class="type fantasma" data-type="ghost"><img src="images/types/ghost.png">Fantasma</button>
+                    <button class="type siniestro" data-type="dark"><img src="images/types/dark.png">Siniestro</button>
+                </div>
+            </menu>
+        </div>
         <nav>
             <input type="search" name="busqueda" id="search" class="search" placeholder="Búsqueda">
             <div class="order">
@@ -60,6 +60,10 @@
                 <img src="images/boton-aleatorio.png">
             </div>
         </nav>
+        <aside class="buttons-aside">
+            <img src="images/boton-ayuda.png" id="helpButton" alt="">
+            <img src="images/boton-versus.png" class="boton-versus" id="boton-versus">
+        </aside>
         <div class="startModal outside-modal" id="startModal">
             <div class="startModalContent" id="startModalContent">
                 <img src="images/closed-white.png" id="closeStartModal">
@@ -76,24 +80,20 @@
                 </p>
             </div>
         </div>
-        <div id="counter-type"></div>
-        <div class="pokeCardContainer outside-modal" id="pokeCardContainer"></div>
-        <div id="container" class="container"></div>
-        <aside class="buttons-aside">
-            <img src="images/boton-ayuda.png" id="helpButton" alt="">
-            <img src="images/boton-versus.png" class="boton-versus" id="boton-versus">
-        </aside>
         <div id="versus-modal-container"></div>
+        <div class="pokeCardContainer outside-modal" id="pokeCardContainer"></div>
         <div id="counter-type"></div>
+        <div id="container-galery" class="container"></div>
         <span class="iconify hide span1" id="back" data-inline="false" data-icon="ion:caret-back"></span>
-        <div id="container" class="container"></div>
     </div>
     <footer>
         <span class="iconify span1" data-inline="false" data-icon="simple-icons:pokemon"></span>
         <p>© 2020 Illari y Veronica Develop S.A</p>
     </footer>
+
     <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
     <script src="main.js" type="module"></script>
+
 </body>
 
 </html>

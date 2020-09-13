@@ -220,6 +220,7 @@ nav * {
 
 .menu-sidebar {
     position: absolute;
+    margin-top: 0;
     width: 30%;
     background: #F6F2DF;
     height: 100vh;

@@ -16,14 +16,14 @@ const versusButton = document.getElementById("boton-versus");
 const randomizePokemon = document.getElementById("random");
 const eachPokemon = dataUtilities.listAll();
 // const back = document.getElementById("back");
-const container = document.getElementById("container");
+const containerGalery = document.getElementById("container-galery");
 const pokeCardContainer = document.getElementById("pokeCardContainer");
 const closeStartModal = document.getElementById("closeStartModal");
 const helpButton = document.getElementById("helpButton");
 
 //Mostrar las cartas en la galería
 function showCards(dataArr) {
-    container.innerHTML = "";
+    containerGalery.innerHTML = "";
     for (let k = 0; k < dataArr.length; k++) {
         let txtClass = "";
         let eachTypePoke = dataArr[k].type;
@@ -37,11 +37,12 @@ function showCards(dataArr) {
         for (let l = 0; l < dataArr.length; l++) {
             txtClass += eachTypePoke[l] + " ";
         }
-        container.innerHTML += templateCards;
+        containerGalery.innerHTML += templateCards;
     }
+    showPokeCards(dataArr);
 }
 
-//Filtrar por tipo
+//Filtrar por showPokeCards(pokemonDataByType);tipo
 function filterPokemonByType(pokemonType) {
     let pokemonDataByType = dataUtilities.filterByType(pokemonType);
     const templateCards = `
@@ -51,7 +52,7 @@ function filterPokemonByType(pokemonType) {
     <img src="images/closed-new.png" id="closed-sticker">
     </div>
     `
-    document.getElementById("container").innerHTML = "";
+    document.getElementById("container-galery").innerHTML = "";
     document.getElementById("modal-menu").classList.add("hide");
     document.getElementById("modal-menu").classList.remove("display");
 
@@ -82,7 +83,6 @@ buttonClosed.addEventListener("click", function() {
 inputSearch.addEventListener("keyup", function(e) {
     const pokemonDataByName = dataUtilities.filterByName(e.target.value);
     showCards(pokemonDataByName);
-
 })
 
 //Capturar el tipo de pokemon
@@ -97,6 +97,7 @@ for (let j = 0; j < typeButton.length; j++) {
 orderAz.addEventListener("click", function() {
     const orderAz = dataUtilities.orderAlphabeticallyAz();
     showCards(orderAz);
+
 
 })
 
@@ -179,50 +180,43 @@ versusButton.addEventListener("click", function() {
 
 //Función mostrar modal personalizado
 function showPokeCards(dataArr) {
-    // for (let k = 0; k < dataArr.length; k++) {
-    //     document.getElementById(dataArr[k].name).addEventListener("click", function() {
-    //                 document.getElementById("pokeCardContainer").style.display = "block";
-
-    //                 pokeCardContainer.innerHTML = "";
-    //                 pokeCardContainer.innerHTML = `
-    //     document.getElementById(dataArr[k].name).addEventListener("click", function(){
-    //     document.getElementById("pokeCardContainer").style.display = "block";
-    //    /*  let templatePrevEvolution = '';
-    //     // verificar si existe la propiedad prev-evolution
-    //     dataArr[k].evolution['prev-evolution'].forEach((elemento) => {
-    //         console.log(elemento.name)
-    //         templatePrevEvolution += ` <p> $ {elemento.name} </p>`
-    //                     // verificar si existe la propiedad prev-evolution
-
-    //                 // Si tiene le agregamos el template */
-    //                 //})
-    //                 pokeCardContainer.innerHTML = `
-    //         <div class="pokeCard" id="pokeCard">
-    //         <img src="images/closed-new.png" id="close">
-    //             <div class="headCard ">
-    //                 <img src="${dataArr[k].img}" class="imgSize" alt="">
-    //                 <div class="headCard2">
-    //                     <p>Nombre: ${dataArr[k].name} </p>
-    //                     <p>N°: ${dataArr[k].num} </p>
-    //                 </div>
-    //             </div>
-    //             <div class="centerCard">
-    //                 <p>Peso: ${dataArr[k].size.weight}</p>
-    //                 <p>Altura: ${dataArr[k].size.height}</p>
-    //                 <p>Tipo: ${dataArr[k].type}</p>
-    //             </div>
-    //             <p id="description" translate="yes" >${dataArr[k].about} </p>
-    //             <p id="evolution">Evoluciones</p>
-    //         </div>
-    //             document.getElementById("pokeCard").style.display = "block";
-    //             document.getElementById("close").addEventListener("click", function(){
-    //                 pokeCardContainer.style.display = "none";
-    //             })
-    //     }) 
-    // }
+    for (let k = 0; k < dataArr.length; k++) {
+        document.getElementById(dataArr[k].name).addEventListener("click", function() {
+            document.getElementById("pokeCardContainer").style.display = "block";
+            /*  let templatePrevEvolution = '';
+             // verificar si existe la propiedad prev-evolution
+             dataArr[k].evolution['prev-evolution'].forEach((elemento) => {
+                 console.log(elemento.name)
+                 templatePrevEvolution += `<p>${elemento.name}</p>`
+                  // verificar si existe la propiedad prev-evolution
+                    // Si tiene le agregamos el template */
+            //})
+            pokeCardContainer.innerHTML = `
+            <div class="pokeCard" id="pokeCard">
+            <img src="images/closed-new.png" id="close">
+                <div class="headCard ">
+                    <img src="${dataArr[k].img}" class="imgSize" alt="">
+                    <div class="headCard2">
+                        <p>Nombre: ${dataArr[k].name} </p>
+                        <p>N°: ${dataArr[k].num} </p>
+                    </div>
+                </div>
+                <div class="centerCard">
+                    <p>Peso: ${dataArr[k].size.weight}</p>
+                    <p>Altura: ${dataArr[k].size.height}</p>
+                    <p>Tipo: ${dataArr[k].type}</p>
+                </div>
+                <p id="description" translate="yes" >${dataArr[k].about} </p>
+                <p id="evolution">Evoluciones</p>
+            </div>
+                `
+            document.getElementById("pokeCard").style.display = "block";
+            document.getElementById("close").addEventListener("click", function() {
+                pokeCardContainer.style.display = "none";
+            })
+        })
+    }
 }
-
-showPokeCards(eachPokemon);
 
 //Cerrando modal de inicio
 closeStartModal.addEventListener("click", function() {
