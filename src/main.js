@@ -182,15 +182,16 @@ showCards(eachPokemon);
     for (let k = 0; k < dataArr.length; k++) {
     document.getElementById(dataArr[k].name).addEventListener("click", function(){
         document.getElementById("pokeCardContainer").style.display = "block";
-       /*  let templatePrevEvolution = '';
+/*       let templatePrevEvolution = '';
         // verificar si existe la propiedad prev-evolution
         dataArr[k].evolution['prev-evolution'].forEach((elemento) => {
             console.log(elemento.name)
-            templatePrevEvolution += `<p>${elemento.name}</p>`
-             // verificar si existe la propiedad prev-evolution
+            templatePrevEvolution += `<p>${elemento.name}</p>`;
+        // verificar si existe la propiedad prev-evolution
+        dataArr[k].evolution['next-evolution'].forEach(())
 
-               // Si tiene le agregamos el template */
-        //})
+               // Si tiene le agregamos el template
+        }) */
             pokeCardContainer.innerHTML=`
             <div class="pokeCard" id="pokeCard">
             <img src="images/closed-new.png" id="close">
