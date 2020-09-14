@@ -206,7 +206,6 @@ function showPokeCards(dataArr) {
                         <p>Tipo: ${dataArr[k].type}</p>
                     </div>
                     <p id="description" translate="yes" >${dataArr[k].about} </p>
-                    <p id="evolution">Evoluciones</p>
                 </div>
             </div>
             </div>
