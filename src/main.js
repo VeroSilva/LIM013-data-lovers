@@ -189,22 +189,26 @@ function showPokeCards(dataArr) {
                     // Si tiene le agregamos el template */
             //})
             pokeCardContainer.innerHTML = `
+            <div class="outside-modal">
             <div class="pokeCard" id="pokeCard">
             <img src="images/closed-new.png" id="close">
-                <div class="headCard ">
-                    <img src="${dataArr[k].img}" class="imgSize" alt="">
-                    <div class="headCard2">
-                        <p>Nombre: ${dataArr[k].name} </p>
-                        <p>N°: ${dataArr[k].num} </p>
+                <div class="info-centered">
+                    <div class="headCard ">
+                        <img src="${dataArr[k].img}" class="imgSize" alt="">
+                        <div class="headCard2">
+                            <p>Nombre: ${dataArr[k].name} </p>
+                            <p>N°: ${dataArr[k].num} </p>
+                        </div>
                     </div>
+                    <div class="centerCard">
+                        <p>Peso: ${dataArr[k].size.weight}</p>
+                        <p>Altura: ${dataArr[k].size.height}</p>
+                        <p>Tipo: ${dataArr[k].type}</p>
+                    </div>
+                    <p id="description" translate="yes" >${dataArr[k].about} </p>
+                    <p id="evolution">Evoluciones</p>
                 </div>
-                <div class="centerCard">
-                    <p>Peso: ${dataArr[k].size.weight}</p>
-                    <p>Altura: ${dataArr[k].size.height}</p>
-                    <p>Tipo: ${dataArr[k].type}</p>
-                </div>
-                <p id="description" translate="yes" >${dataArr[k].about} </p>
-                <p id="evolution">Evoluciones</p>
+            </div>
             </div>
                 `
             document.getElementById("pokeCard").style.display = "block";

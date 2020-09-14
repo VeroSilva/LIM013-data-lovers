@@ -185,7 +185,8 @@ nav * {
     padding: 30px;
     text-transform: capitalize;
 }
-.card:hover{
+
+.card:hover {
     cursor: pointer;
 }
 
@@ -390,22 +391,26 @@ nav * {
     display: flex;
     justify-content: center;
 }
+
+
 /*Footer*/
-footer{
+
+footer {
     background-color: #F6F2DF;
     color: #003049;
     padding: 20px;
     font-size: 50px;
     text-align: center;
     font-family: "Open Sans", "sans-serif";
-    position: absolute ;
+    position: absolute;
     width: 50%;
     z-index: 1;
- 
 }
+
 #counter-type {
     margin-bottom: 50px;
 }
+
 
 /*Modal de Calculadora*/
 
@@ -416,13 +421,15 @@ footer{
     display: flex;
     flex-direction: column;
 }
-.buttons-aside>img{
+
+.buttons-aside>img {
     width: 120px;
     height: 120px;
     padding: 10px;
     filter: drop-shadow();
 }
-.buttons-aside>img:hover{
+
+.buttons-aside>img:hover {
     cursor: pointer;
 }
 
@@ -516,6 +523,7 @@ footer{
     background: radial-gradient(circle, rgba(2, 0, 36, 1) 0%, rgba(0, 48, 73, 1) 49%, rgba(0, 66, 102, 0.46260511040353647) 100%);
 }
 
+
 /*Footer*/
 
 footer {
@@ -541,43 +549,52 @@ footer {
 .span1 {
     color: #003049;
 }
-#back:hover{
+
+#back:hover {
     cursor: pointer;
 }
+
 .span1 {
-    color: #003049; 
+    color: #003049;
     font-size: 100px;
 }
 
+
 /* Modal por pokeCard*/
 
-.pokeCardContainer{
-    display: flex;
-    display: none;
+.pokeCardContainer {
     position: fixed;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-left: 30%;
-    padding-top: 2%;
 }
-.pokeCard{
-    display: flex;
+
+.pokeCard {
+    display: flex !important;
     flex-wrap: wrap;
     background: url("images/pantalla-id.png");
     background-size: 500px 600px;
     width: 500px;
     height: 600px;
+    position: absolute;
+    align-items: center;
 }
-.pokeCardImageContainer{
+
+.pokeCardImageContainer {
     width: 100px;
     height: 100px;
 }
-#close{
+
+#close {
     width: 50px;
     height: 50px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
 }
-.styleText{
+
+.styleText {
     font-family: 'Anton';
     font-size: 18px;
     margin-left: 50px;
@@ -586,70 +603,74 @@ footer {
     padding: auto;
     text-align: center;
 }
-.headCard{
+
+.headCard {
     display: flex;
-    justify-content: space-evenly ;
+    justify-content: space-evenly;
     flex-direction: row;
     align-items: center;
 }
-.headCard2>p{
+
+.headCard2>p {
     color: #003049;
     font-size: 25px;
     font-family: 'Anton';
     margin: 2px;
     text-transform: capitalize;
 }
-.headCard2{
+
+.headCard2 {
     display: flex;
     flex-direction: column;
 }
-.centerCard{
+
+.centerCard {
     display: flex;
     flex-direction: row;
-    justify-content: center ;
+    justify-content: center;
     color: #F77F00;
     font-size: 18px;
 }
-.imgSize{
-    width:150px;
+
+.imgSize {
+    width: 150px;
     height: 150px;
 }
-#close{
-    padding: 10px;
-}
-#close:hover{
-    cursor: pointer;
-}
-#description{
+
+#description {
     font-size: 18px;
     color: #003049;
     text-align: center;
-    padding:  0px 50px;
+    padding: 0px 50px;
 }
-#evolution{
+
+#evolution {
     color: #003049;
     text-align: center;
     font-family: "Anton";
     color: #F77F00;
     font-size: 18px;
-
 }
-.centerCard>p{
+
+.centerCard>p {
     padding: 5px;
     font-family: "Anton";
 }
-.closedStartModal{
+
+.closedStartModal {
     width: 75px;
     height: 75px;
 }
 
+
 /* Modal de inicio */
 
-.startModal{
+.startModal {
     display: flex;
     position: fixed;
 }
-.startModalContent{
+
+.startModalContent {
     background-image: url("images/fondo-bienvenida.jpg");
     background-size: 320px 450px;
     border-radius: 10px;
@@ -660,49 +681,56 @@ footer {
     margin-left: auto;
     text-align: center;
 }
+
 .startModalContent:before {
-	content:'';
-	position: absolute;
+    content: '';
+    position: absolute;
     top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background-color: rgba(0,0,0,0.4);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.4);
 }
-.startModalContent>p{
+
+.startModalContent>p {
     position: relative;
     font-family: 'Anton';
     font-size: 50px;
     color: white;
     text-align: center;
 }
-#closeStartModal{
+
+#closeStartModal {
     width: 50px;
     height: 50px;
     padding: 10px;
     position: relative;
     margin-left: 0;
 }
-#closeStartModal:hover{
+
+#closeStartModal:hover {
     cursor: pointer;
 }
 
+
 /*Modal de Ayuda*/
-.modalHelp{
+
+.modalHelp {
     position: fixed;
     display: none;
+}
 
-}
 .modalHelpContent:before {
-	content:'';
-	position: absolute;
+    content: '';
+    position: absolute;
     top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background-color: rgba(0,0,0,0.4);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.4);
 }
-.modalHelpContent{
+
+.modalHelpContent {
     background-image: url("images/fondo-ayuda.jpg");
     text-align: center;
     background-size: 400px 600px;
@@ -714,18 +742,21 @@ footer {
     border-radius: 10px;
     overflow: scroll;
 }
-.modalHelpContent>p{
+
+.modalHelpContent>p {
     color: white;
     position: relative;
     text-align: left;
 }
-.modalHelpContent> h2{
+
+.modalHelpContent>h2 {
     position: relative;
     color: white;
     font-size: 50px;
     margin-bottom: 5px;
 }
-#closeHelpModal{
+
+#closeHelpModal {
     display: flex;
     padding: 10px;
     width: 50px;
@@ -733,21 +764,22 @@ footer {
     position: absolute;
     margin-left: 0px;
 }
-.helpInstructions{
+
+.helpInstructions {
     text-align: center;
     font-size: 20px;
     background-color: #90e39a60;
     color: white;
     position: relative;
     font-family: 'Open Sans';
-    margin: 150px 0px  ;
+    margin: 150px 0px;
     padding: auto;
     height: 300px;
 }
-.helpInstructions> h2{
+
+.helpInstructions>h2 {
     font-weight: bold;
     padding: 0px;
     margin: 0px;
     font-size: 50px;
-
 }
