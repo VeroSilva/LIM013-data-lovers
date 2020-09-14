@@ -10,7 +10,7 @@
 * [6. Resúmen del feedback recibido](#6-resumen-feedback)
 * [7. Construido con 🛠️](#7-construido-con)
 * [8. Autores](#8-autores)
-* [9. Expresiones de Gratitud 🎁](#9-expresiones-de-gratitud)
+* [9. Gracias 🎁](#9-expresiones-de-gratitud)
 
 
 ## 1. Preámbulo
@@ -79,7 +79,7 @@ HTML5
 * **Verónica Silva** -[VeroSilva](https://github.com/VeroSilva)
 * **Illari Alvarez-Gil Escobar** -[IllariLaksmi](https://github.com/IllariLaksmi)
 
-## 9. Expresiones de Gratitud 🎁
+## 9. Gracias 🎁
 
 * Damos gracias a nuestros familiares y a todos aquellos que nos apoyaron en este proyecto :)
 
