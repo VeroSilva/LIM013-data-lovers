@@ -111,7 +111,7 @@ orderDirect.addEventListener("click", function() {
 })
 
 orderReverse.addEventListener("click", function() {
-    const orderReverse = dataUtilities.orderNumericallyDirect();
+    const orderReverse = dataUtilities.orderNumericallyReverse();
     showCards(orderReverse);
 
 })

@@ -57,6 +57,22 @@ p {
 }
 
 
+/*Header*/
+
+#headerImage1 {
+    display: block;
+}
+
+#headerImage2 {
+    display: none;
+}
+
+#headerImage1,
+#headerImage2 {
+    width: 100%;
+}
+
+
 /*Navegación*/
 
 nav {
@@ -122,6 +138,7 @@ nav * {
 }
 
 .random {
+    cursor: pointer;
     width: 80px;
     background-color: #FCBF49;
     border-radius: 10px;
@@ -146,10 +163,6 @@ nav * {
     top: 70px;
     right: 10px;
     position: absolute;
-}
-
-#headerImage {
-    width: 100%;
 }
 
 .imageContainer {
@@ -178,9 +191,6 @@ nav * {
     background-color: #003049;
     border-radius: 10px;
     margin: 20px;
-    -webkit-box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
-    -moz-box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
-    box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
     width: 15%;
     padding: 30px;
     text-transform: capitalize;
@@ -192,6 +202,9 @@ nav * {
 
 .card:hover {
     cursor: pointer;
+    -webkit-box-shadow: 7px 10px 11px -2px rgba(0, 0, 0, 0.55);
+    -moz-box-shadow: 7px 10px 11px -2px rgba(0, 0, 0, 0.55);
+    box-shadow: 7px 10px 11px -2px rgba(0, 0, 0, 0.55);
 }
 
 
@@ -448,13 +461,13 @@ footer {
 .versusModal {
     background: url("images/fondo-versus.jpg");
     width: 50%;
-    height: 50%;
     display: flex;
     align-items: center;
     flex-direction: column;
     border-radius: 10px;
     position: absolute;
     background-position: top;
+    padding: 30px 0px;
 }
 
 .versusModal::before {
@@ -482,7 +495,7 @@ footer {
     color: #f6f2df;
     font-size: 50px;
     width: 80%;
-    margin: 50px auto 0 auto;
+    margin: 0px auto 0 auto;
     text-align: center;
 }
 
@@ -782,4 +795,96 @@ footer {
     padding: 0px;
     margin: 0px;
     font-size: 50px;
+}
+
+@media (max-width: 600px) {
+    /*Header*/
+    #headerImage1 {
+        display: none;
+    }
+    #headerImage2 {
+        display: block;
+    }
+    #menuHamburguesa {
+        position: absolute;
+        width: 75px;
+        height: 75px;
+        top: 10px;
+        left: 20px;
+    }
+    /*Pantalla completa*/
+    #general {
+        width: 100%;
+    }
+    .container {
+        width: 100%;
+    }
+    /*Navegación*/
+    nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 0px;
+    }
+    .search {
+        width: 80%;
+        height: 60px;
+    }
+    .buttonOrder,
+    .order,
+    .random {
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .buttons-aside>img {
+        width: 80px;
+        height: 80px;
+    }
+    .links {
+        margin: 325px 0px 0px 50px;
+    }
+    /*Menu de tipos*/
+    .modal-menu {
+        width: 100%;
+        margin: 0;
+    }
+    .menu-sidebar {
+        width: 100%;
+    }
+    /*Calculadora*/
+    .versusModal {
+        width: 100%;
+    }
+    .players>input {
+        margin: 10px;
+    }
+    .players {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    /*Cards*/
+    .card p {
+        font-size: 1.5em;
+        margin: 20px 0px 0px 0px;
+    }
+    .card {
+        width: 50%;
+    }
+    .sticker {
+        width: 100%;
+        margin: 30px 0px;
+    }
+    #counter-type {
+        margin-bottom: 0px;
+    }
+    /*Footer*/
+    footer {
+        font-size: 20px;
+    }
+    .span1 {
+        font-size: 150px;
+    }
 }
