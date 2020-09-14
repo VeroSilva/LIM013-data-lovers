@@ -15,7 +15,6 @@ const orderWeakest = document.getElementById("weakest");
 const versusButton = document.getElementById("boton-versus");
 const randomizePokemon = document.getElementById("random");
 const eachPokemon = dataUtilities.listAll();
-// const back = document.getElementById("back");
 const containerGalery = document.getElementById("container-galery");
 const pokeCardContainer = document.getElementById("pokeCardContainer");
 const closeStartModal = document.getElementById("closeStartModal");
@@ -97,14 +96,11 @@ for (let j = 0; j < typeButton.length; j++) {
 orderAz.addEventListener("click", function() {
     const orderAz = dataUtilities.orderAlphabeticallyAz();
     showCards(orderAz);
-
-
 })
 
 orderZa.addEventListener("click", function() {
     const orderZa = dataUtilities.orderAlphabeticallyZa();
     showCards(orderZa);
-
 })
 
 //Ordenar numericamente
@@ -115,8 +111,9 @@ orderDirect.addEventListener("click", function() {
 })
 
 orderReverse.addEventListener("click", function() {
-    const orderReverse = dataUtilities.orderNumericallyReverse();
+    const orderReverse = dataUtilities.orderNumericallyDirect();
     showCards(orderReverse);
+
 })
 
 //Ordenar por fuerza
@@ -232,49 +229,3 @@ document.getElementById("closeHelpModal").addEventListener("click", function() {
 })
 
 showCards(eachPokemon);
-showPokeCards(eachPokemon);
-
-//Paginacion 
-// const first = document.querySelector(".first");
-// const previous = document.querySelector(".previous");
-// const next = document.querySelector(".next");
-// const last = document.querySelector(".last");
-//Funionalidad botón next
-// next.addEventListener("click", function() {
-//         page == lista.length - 6 ? (page == 0) : (page += 10);
-//         container.innerHTML = "";
-//         for (let o = page; o < page + 6; o++) {
-//             let cardNew = document.createElement("div");
-//             let image1 = document.createElement("img");
-//             let text1 = document.createElement("h2");
-//             cardNew.className = "card";
-//             image1.className = "imageContainer";
-//             image1.setAttribute("src", eachPokemon[o].img);
-//             text1.textContent = eachPokemon[o].name;
-//             cardNew.appendChild(image1);
-//             cardNew.appendChild(text1);
-//             lista.push(cardNew);
-//             container.appendChild(cardNew);
-//         }
-//     })
-//Funcionalidad botón previous
-// previous.addEventListener("click", function() {
-//     page == 0 ? (page = lista.length - 10) : (page -= 10);
-//     container.innerHTML = "";
-//     for (let o = page; o < page + 6; o++) {
-//         let cardNew = document.createElement("div");
-//         let image1 = document.createElement("img");
-//         let text1 = document.createElement("h2");
-//         cardNew.className = "card";
-//         image1.className = "imageContainer";
-//         image1.setAttribute("src", eachPokemon[o].img);
-//         text1.textContent = eachPokemon[o].name;
-//         cardNew.appendChild(image1);
-//         cardNew.appendChild(text1);
-//         lista.push(cardNew);
-//         container.appendChild(cardNew);
-//     }
-
-//     document.getElementById("modal-menu").classList.add("display");
-//     document.getElementById("modal-menu").classList.remove("hide");
-// })

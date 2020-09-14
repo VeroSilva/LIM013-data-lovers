@@ -8,6 +8,10 @@
 * [4. Requerimientos de descargas del proyecto](#4-requerimientos-de-descargas-del-proyecto)
 * [5. Prototipos y producto final](#5-prototipos-y-producto-final)
 * [6. Resúmen del feedback recibido](#6-resumen-feedback)
+* [7. Construido con 🛠️](#7-construido-con)
+* [8. Autores](#8-autores)
+* [9. Gracias 🎁](#9-expresiones-de-gratitud)
+
 
 ## 1. Preámbulo
 
@@ -66,4 +70,17 @@ Dentro del juego, le es importante las características de los pokemones, el ord
 ## 6. Resúmen del feedback recibido 
 
 El feedback en el desarrollo de este proyecto fue pieza clave para la optimización de funciones, maquetaciones y paleta de colores. El prototipo en papel fue planteado de acuerdo a feedback recibido con la idea principal, posteriormente recibimos feedback a través de una encuesta a nuestros usuarios; en los cuales optimizamos la interacción de la página y colores utilizados.
+## 7. Construido con 🛠️
+JavaScript
+CSS3
+HTML5
+## 8. Autores ✒️
+
+* **Verónica Silva** -[VeroSilva](https://github.com/VeroSilva)
+* **Illari Alvarez-Gil Escobar** -[IllariLaksmi](https://github.com/IllariLaksmi)
+
+## 9. Gracias 🎁
+
+* Damos gracias a nuestros familiares y a todos aquellos que nos apoyaron en este proyecto :)
+
 

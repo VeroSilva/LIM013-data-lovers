@@ -23,8 +23,7 @@ h4 {
     font-family: 'Anton';
 }
 
-p,
-a {
+p {
     font-family: 'Open sans';
 }
 
@@ -48,22 +47,6 @@ a {
     min-height: 100vh;
     margin: auto;
     position: relative;
-}
-
-
-/*Header*/
-
-#headerImage1 {
-    display: block;
-}
-
-#headerImage2 {
-    display: none;
-}
-
-#headerImage1,
-#headerImage2 {
-    width: 100%;
 }
 
 
@@ -144,7 +127,6 @@ nav * {
     border-radius: 10px;
     justify-content: center;
     display: flex;
-    cursor: pointer;
     -webkit-box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
     -moz-box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
     box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
@@ -164,6 +146,10 @@ nav * {
     top: 70px;
     right: 10px;
     position: absolute;
+}
+
+#headerImage {
+    width: 100%;
 }
 
 .imageContainer {
@@ -192,16 +178,19 @@ nav * {
     background-color: #003049;
     border-radius: 10px;
     margin: 20px;
+    -webkit-box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
+    -moz-box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
+    box-shadow: -1px 11px 11px -6px rgba(77, 77, 77, 0.65);
     width: 15%;
     padding: 30px;
     text-transform: capitalize;
 }
+.card:hover{
+    cursor: pointer;
+}
 
 .card:hover {
     cursor: pointer;
-    -webkit-box-shadow: 7px 10px 11px -2px rgba(0, 0, 0, 0.55);
-    -moz-box-shadow: 7px 10px 11px -2px rgba(0, 0, 0, 0.55);
-    box-shadow: 7px 10px 11px -2px rgba(0, 0, 0, 0.55);
 }
 
 
@@ -401,7 +390,22 @@ nav * {
     display: flex;
     justify-content: center;
 }
-
+/*Footer*/
+footer{
+    background-color: #F6F2DF;
+    color: #003049;
+    padding: 20px;
+    font-size: 50px;
+    text-align: center;
+    font-family: "Open Sans", "sans-serif";
+    position: absolute ;
+    width: 50%;
+    z-index: 1;
+ 
+}
+#counter-type {
+    margin-bottom: 50px;
+}
 
 /*Modal de Calculadora*/
 
@@ -412,15 +416,13 @@ nav * {
     display: flex;
     flex-direction: column;
 }
-
-.buttons-aside>img {
+.buttons-aside>img{
     width: 120px;
     height: 120px;
     padding: 10px;
     filter: drop-shadow();
 }
-
-.buttons-aside>img:hover {
+.buttons-aside>img:hover{
     cursor: pointer;
 }
 
@@ -439,7 +441,7 @@ nav * {
 .versusModal {
     background: url("images/fondo-versus.jpg");
     width: 50%;
-    padding: 50px 15px;
+    height: 50%;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -473,7 +475,7 @@ nav * {
     color: #f6f2df;
     font-size: 50px;
     width: 80%;
-    margin: auto;
+    margin: 50px auto 0 auto;
     text-align: center;
 }
 
@@ -514,7 +516,6 @@ nav * {
     background: radial-gradient(circle, rgba(2, 0, 36, 1) 0%, rgba(0, 48, 73, 1) 49%, rgba(0, 66, 102, 0.46260511040353647) 100%);
 }
 
-
 /*Footer*/
 
 footer {
@@ -525,6 +526,7 @@ footer {
     text-align: center;
     font-family: "Open Sans", "sans-serif";
     position: relative;
+    width: 100%;
     z-index: 1;
 }
 
@@ -539,20 +541,17 @@ footer {
 .span1 {
     color: #003049;
 }
-
-#back:hover {
+#back:hover{
     cursor: pointer;
 }
-
 .span1 {
-    color: #003049;
+    color: #003049; 
     font-size: 100px;
 }
 
-
 /* Modal por pokeCard*/
 
-.pokeCardContainer {
+.pokeCardContainer{
     display: flex;
     display: none;
     position: fixed;
@@ -562,8 +561,7 @@ footer {
     padding-left: 30%;
     padding-top: 2%;
 }
-
-.pokeCard {
+.pokeCard{
     display: flex;
     flex-wrap: wrap;
     background: url("images/pantalla-id.png");
@@ -571,18 +569,15 @@ footer {
     width: 500px;
     height: 600px;
 }
-
-.pokeCardImageContainer {
+.pokeCardImageContainer{
     width: 100px;
     height: 100px;
 }
-
-#close {
+#close{
     width: 50px;
     height: 50px;
 }
-
-.styleText {
+.styleText{
     font-family: 'Anton';
     font-size: 18px;
     margin-left: 50px;
@@ -591,82 +586,70 @@ footer {
     padding: auto;
     text-align: center;
 }
-
-.headCard {
+.headCard{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-evenly ;
     flex-direction: row;
     align-items: center;
 }
-
-.headCard2>p {
+.headCard2>p{
     color: #003049;
     font-size: 25px;
     font-family: 'Anton';
     margin: 2px;
     text-transform: capitalize;
 }
-
-.headCard2 {
+.headCard2{
     display: flex;
     flex-direction: column;
 }
-
-.centerCard {
+.centerCard{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: center ;
     color: #F77F00;
     font-size: 18px;
 }
-
-.imgSize {
-    width: 150px;
+.imgSize{
+    width:150px;
     height: 150px;
 }
-
-#close {
+#close{
     padding: 10px;
 }
-
-#close:hover {
+#close:hover{
     cursor: pointer;
 }
-
-#description {
+#description{
     font-size: 18px;
     color: #003049;
     text-align: center;
-    padding: 0px 50px;
+    padding:  0px 50px;
 }
-
-#evolution {
+#evolution{
     color: #003049;
     text-align: center;
     font-family: "Anton";
     color: #F77F00;
     font-size: 18px;
-}
 
-.centerCard>p {
+}
+.centerCard>p{
     padding: 5px;
     font-family: "Anton";
 }
-
-.closedStartModal {
+.closedStartModal{
     width: 75px;
     height: 75px;
 }
 
-
 /* Modal de inicio */
 
-.startModal {
+.startModal{
     display: flex;
     position: fixed;
 }
-
-.startModalContent {
+.startModalContent{
     background-image: url("images/fondo-bienvenida.jpg");
     background-size: 320px 450px;
     border-radius: 10px;
@@ -677,56 +660,49 @@ footer {
     margin-left: auto;
     text-align: center;
 }
-
 .startModalContent:before {
-    content: '';
-    position: absolute;
+	content:'';
+	position: absolute;
     top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.4);
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0,0,0,0.4);
 }
-
-.startModalContent>p {
+.startModalContent>p{
     position: relative;
     font-family: 'Anton';
     font-size: 50px;
     color: white;
     text-align: center;
 }
-
-#closeStartModal {
+#closeStartModal{
     width: 50px;
     height: 50px;
     padding: 10px;
     position: relative;
     margin-left: 0;
 }
-
-#closeStartModal:hover {
+#closeStartModal:hover{
     cursor: pointer;
 }
 
-
 /*Modal de Ayuda*/
-
-.modalHelp {
+.modalHelp{
     position: fixed;
     display: none;
-}
 
+}
 .modalHelpContent:before {
-    content: '';
-    position: absolute;
+	content:'';
+	position: absolute;
     top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.4);
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0,0,0,0.4);
 }
-
-.modalHelpContent {
+.modalHelpContent{
     background-image: url("images/fondo-ayuda.jpg");
     text-align: center;
     background-size: 400px 600px;
@@ -736,116 +712,42 @@ footer {
     margin-right: auto;
     margin-top: 2%;
     border-radius: 10px;
+    overflow: scroll;
 }
-
-.modalHelpContent>p {
+.modalHelpContent>p{
     color: white;
     position: relative;
-    background-color: rgba(0, 0, 0, 0.7);
     text-align: left;
 }
-
-.modalHelpContent>h2 {
+.modalHelpContent> h2{
     position: relative;
     color: white;
     font-size: 50px;
     margin-bottom: 5px;
 }
-
-#closeHelpModal {
+#closeHelpModal{
+    display: flex;
+    padding: 10px;
     width: 50px;
     height: 50px;
-    position: relative;
+    position: absolute;
+    margin-left: 0px;
 }
+.helpInstructions{
+    text-align: center;
+    font-size: 20px;
+    background-color: #90e39a60;
+    color: white;
+    position: relative;
+    font-family: 'Open Sans';
+    margin: 150px 0px  ;
+    padding: auto;
+    height: 300px;
+}
+.helpInstructions> h2{
+    font-weight: bold;
+    padding: 0px;
+    margin: 0px;
+    font-size: 50px;
 
-@media (max-width: 600px) {
-    /*Header*/
-    #headerImage1 {
-        display: none;
-    }
-    #headerImage2 {
-        display: block;
-    }
-    #menuHamburguesa {
-        position: absolute;
-        width: 75px;
-        height: 75px;
-        top: 10px;
-        left: 20px;
-    }
-    /*Pantalla completa*/
-    #general {
-        width: 100%;
-    }
-    .container {
-        width: 100%;
-    }
-    /*Navegación*/
-    nav {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin-bottom: 0px;
-    }
-    .search {
-        width: 80%;
-        height: 60px;
-    }
-    .buttonOrder,
-    .order,
-    .random {
-        border-radius: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .buttons-aside>img {
-        width: 80px;
-        height: 80px;
-    }
-    .links {
-        margin: 370px 0px 0px 50px;
-    }
-    /*Menu de tipos*/
-    .modal-menu {
-        width: 100%;
-        margin: 0;
-    }
-    .menu-sidebar {
-        width: 100%;
-    }
-    /*Calculadora*/
-    .versusModal {
-        width: 100%;
-    }
-    .players>input {
-        margin: 10px;
-    }
-    .players {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-    /*Cards*/
-    .card p {
-        font-size: 1.5em;
-        margin: 20px 0px 0px 0px;
-    }
-    .card {
-        width: 50%;
-    }
-    .sticker {
-        width: 100%;
-        margin: 30px 0px;
-    }
-    #counter-type {
-        margin-bottom: 0px;
-    }
-    /*Footer*/
-    footer {
-        font-size: 20px;
-    }
-    .span1 {
-        font-size: 150px;
-    }
 }
