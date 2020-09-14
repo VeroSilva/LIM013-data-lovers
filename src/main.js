@@ -14,14 +14,15 @@ const orderStrongest = document.getElementById("stronger");
 const orderWeakest = document.getElementById("weakest");
 const versusButton = document.getElementById("boton-versus");
 const randomizePokemon = document.getElementById("random");
-const container = document.getElementById("container");
+const eachPokemon = dataUtilities.listAll();
+const containerGalery = document.getElementById("container-galery");
 const pokeCardContainer = document.getElementById("pokeCardContainer");
 const closeStartModal = document.getElementById("closeStartModal");
 const helpButton = document.getElementById("helpButton");
-const eachPokemon = dataUtilities.listAll();
+
 //Mostrar las cartas en la galería
 function showCards(dataArr) {
-    container.innerHTML = "";
+    containerGalery.innerHTML = "";
     for (let k = 0; k < dataArr.length; k++) {
         let txtClass = "";
         let eachTypePoke = dataArr[k].type;
@@ -31,15 +32,16 @@ function showCards(dataArr) {
             <p class="">${dataArr[k].name}</p>
             </div>
             `;
-      
+
         for (let l = 0; l < dataArr.length; l++) {
             txtClass += eachTypePoke[l] + " ";
         }
-        container.innerHTML += templateCards;
+        containerGalery.innerHTML += templateCards;
     }
+    showPokeCards(dataArr);
 }
 
-//Filtrar por tipo
+//Filtrar por showPokeCards(pokemonDataByType);tipo
 function filterPokemonByType(pokemonType) {
     let pokemonDataByType = dataUtilities.filterByType(pokemonType);
     const templateCards = `
@@ -49,10 +51,10 @@ function filterPokemonByType(pokemonType) {
     <img src="images/closed-new.png" id="closed-sticker">
     </div>
     `
-    document.getElementById("container").innerHTML = "";
+    document.getElementById("container-galery").innerHTML = "";
     document.getElementById("modal-menu").classList.add("hide");
     document.getElementById("modal-menu").classList.remove("display");
-    
+
     counterType.innerHTML = templateCards;
 
     const buttonRemove = document.getElementById("closed-sticker");
@@ -80,7 +82,6 @@ buttonClosed.addEventListener("click", function() {
 inputSearch.addEventListener("keyup", function(e) {
     const pokemonDataByName = dataUtilities.filterByName(e.target.value);
     showCards(pokemonDataByName);
-    
 })
 
 //Capturar el tipo de pokemon
@@ -95,13 +96,11 @@ for (let j = 0; j < typeButton.length; j++) {
 orderAz.addEventListener("click", function() {
     const orderAz = dataUtilities.orderAlphabeticallyAz();
     showCards(orderAz);
-  
 })
 
 orderZa.addEventListener("click", function() {
     const orderZa = dataUtilities.orderAlphabeticallyZa();
     showCards(orderZa);
-
 })
 
 //Ordenar numericamente
@@ -112,21 +111,23 @@ orderDirect.addEventListener("click", function() {
 })
 
 orderReverse.addEventListener("click", function() {
-    const orderReverse = dataUtilities.orderNumericallyDirect();
+    const orderReverse = dataUtilities.orderNumericallyReverse();
     showCards(orderReverse);
 
 })
+
 //Ordenar por fuerza
-orderStrongest.addEventListener("click", function(){
+orderStrongest.addEventListener("click", function() {
     const orderStrongest = dataUtilities.orderStrong();
     showCards(orderStrongest);
 
 })
-orderWeakest.addEventListener("click", function(){
+orderWeakest.addEventListener("click", function() {
     const orderWeakest = dataUtilities.orderWeak();
     showCards(orderWeakest);
 
 })
+
 //Random Pokemon
 randomizePokemon.addEventListener("click", function() {
     const selectPokemonRandomize = dataUtilities.randomPokemon(eachPokemon);
@@ -174,95 +175,61 @@ versusButton.addEventListener("click", function() {
 
 })
 
-showCards(eachPokemon);
-
-
 //Función mostrar modal personalizado
- function showPokeCards(dataArr){
+function showPokeCards(dataArr) {
     for (let k = 0; k < dataArr.length; k++) {
-    document.getElementById(dataArr[k].name).addEventListener("click", function(){
-        document.getElementById("pokeCardContainer").style.display = "block";
-        pokeCardContainer.innerHTML=`
+        document.getElementById(dataArr[k].name).addEventListener("click", function() {
+            document.getElementById("pokeCardContainer").style.display = "block";
+            /*  let templatePrevEvolution = '';
+             // verificar si existe la propiedad prev-evolution
+             dataArr[k].evolution['prev-evolution'].forEach((elemento) => {
+                 console.log(elemento.name)
+                 templatePrevEvolution += `<p>${elemento.name}</p>`
+                  // verificar si existe la propiedad prev-evolution
+                    // Si tiene le agregamos el template */
+            //})
+            pokeCardContainer.innerHTML = `
+            <div class="outside-modal">
             <div class="pokeCard" id="pokeCard">
             <img src="images/closed-new.png" id="close">
-                <div class="headCard ">
-                    <img src="${dataArr[k].img}" class="imgSize" alt="">
-                    <div class="headCard2">
-                        <p>Nombre: ${dataArr[k].name} </p>
-                        <p>N°: ${dataArr[k].num} </p>
+                <div class="info-centered">
+                    <div class="headCard ">
+                        <img src="${dataArr[k].img}" class="imgSize" alt="">
+                        <div class="headCard2">
+                            <p>Nombre: ${dataArr[k].name} </p>
+                            <p>N°: ${dataArr[k].num} </p>
+                        </div>
                     </div>
+                    <div class="centerCard">
+                        <p>Peso: ${dataArr[k].size.weight}</p>
+                        <p>Altura: ${dataArr[k].size.height}</p>
+                        <p>Tipo: ${dataArr[k].type}</p>
+                    </div>
+                    <p id="description" translate="yes" >${dataArr[k].about} </p>
+                    <p id="evolution">Evoluciones</p>
                 </div>
-                <div class="centerCard">
-                    <p>Peso: ${dataArr[k].size.weight}</p>
-                    <p>Altura: ${dataArr[k].size.height}</p>
-                    <p>Tipo: ${dataArr[k].type}</p>
-                </div>
-                <p id="description" translate="yes" >${dataArr[k].about} </p>
+            </div>
             </div>
                 `
-                document.getElementById("pokeCard").style.display = "block";
-                document.getElementById("close").addEventListener("click", function(){
-                    pokeCardContainer.style.display = "none";
-                })
-        }) 
+            document.getElementById("pokeCard").style.display = "block";
+            document.getElementById("close").addEventListener("click", function() {
+                pokeCardContainer.style.display = "none";
+            })
+        })
     }
 }
-showPokeCards(eachPokemon);
+
 //Cerrando modal de inicio
-closeStartModal.addEventListener("click", function(){
+closeStartModal.addEventListener("click", function() {
     document.getElementById("startModal").style.display = "none";
 })
+
 //Abrir cerrar modal de ayuda
-helpButton.addEventListener("click", function(){
+helpButton.addEventListener("click", function() {
     document.getElementById("modalHelp").style.display = "block";
 })
-document.getElementById("closeHelpModal").addEventListener("click", function(){
+document.getElementById("closeHelpModal").addEventListener("click", function() {
     document.getElementById("modalHelp").style.display = "none";
 })
 
-//Paginación modal de ayuda
-
-//Paginacion 
-// const first = document.querySelector(".first");
-// const previous = document.querySelector(".previous");
-// const next = document.querySelector(".next");
-// const last = document.querySelector(".last");
-//Funionalidad botón next
-// next.addEventListener("click", function() {
-//         page == lista.length - 6 ? (page == 0) : (page += 10);
-//         container.innerHTML = "";
-//         for (let o = page; o < page + 6; o++) {
-//             let cardNew = document.createElement("div");
-//             let image1 = document.createElement("img");
-//             let text1 = document.createElement("h2");
-//             cardNew.className = "card";
-//             image1.className = "imageContainer";
-//             image1.setAttribute("src", eachPokemon[o].img);
-//             text1.textContent = eachPokemon[o].name;
-//             cardNew.appendChild(image1);
-//             cardNew.appendChild(text1);
-//             lista.push(cardNew);
-//             container.appendChild(cardNew);
-//         }
-//     })
-//Funcionalidad botón previous
-// previous.addEventListener("click", function() {
-//     page == 0 ? (page = lista.length - 10) : (page -= 10);
-//     container.innerHTML = "";
-//     for (let o = page; o < page + 6; o++) {
-//         let cardNew = document.createElement("div");
-//         let image1 = document.createElement("img");
-//         let text1 = document.createElement("h2");
-//         cardNew.className = "card";
-//         image1.className = "imageContainer";
-//         image1.setAttribute("src", eachPokemon[o].img);
-//         text1.textContent = eachPokemon[o].name;
-//         cardNew.appendChild(image1);
-//         cardNew.appendChild(text1);
-//         lista.push(cardNew);
-//         container.appendChild(cardNew);
-//     }
-
-//     document.getElementById("modal-menu").classList.add("display");
-//     document.getElementById("modal-menu").classList.remove("hide");
-// })
+showCards(eachPokemon);
